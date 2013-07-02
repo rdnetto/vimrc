@@ -53,7 +53,7 @@ set title	    		    "Set title in console
 
 " 11 messages and info
 set showcmd
-set showmode
+set nosmd                   "Don't show mode, as Powerline makes it redundant 
 set ruler		    	    "Line/Col numbers in corner
 
 " 13 editing text
