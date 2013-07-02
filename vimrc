@@ -13,6 +13,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 
+colorscheme pablo           "Default colour scheme
+
 filetype plugin indent on	"Enable filetype detection
 " ===============  End Vundle Initialization  ===============
 
