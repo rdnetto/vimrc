@@ -12,10 +12,21 @@ call vundle#rc()
 " Bundles to be managed: (do not put comments on the same lines as these)
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'scrooloose/syntastic'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'vim-easy-align'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'vimez/vim-showmarks'
+Bundle 'klen/python-mode'
+
 
 colorscheme pablo           "Default colour scheme
 
 filetype plugin indent on	"Enable filetype detection
+syntax on
 " ===============  End Vundle Initialization  ===============
 
 
@@ -75,3 +86,4 @@ set wildignorecase
 silent !mkdir ~/.vim/undo > /dev/null 2>&1
 set undodir=~/.vim/undo		"Persistent undo
 set undofile
+
