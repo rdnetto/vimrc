@@ -9,8 +9,8 @@ filetype off                "This needs to be disabled for this section
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" Bundles to be managed:
-Bundle 'gmarik/vundle'      "Need to let Vundle manage itself
+" Bundles to be managed: (do not put comments on the same lines as these)
+Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on	"Enable filetype detection
