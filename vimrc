@@ -2,6 +2,21 @@
 version 6.0
 set nocompatible
 
+
+" =============== Begin Vundle Initialization ===============
+filetype off                "This needs to be disabled for this section
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Bundles to be managed:
+Bundle 'gmarik/vundle'      "Need to let Vundle manage itself
+Bundle 'altercation/vim-colors-solarized'
+
+filetype plugin indent on	"Enable filetype detection
+" ===============  End Vundle Initialization  ===============
+
+
 "  2 moving around (searching & patterns)
 set incsearch			"Show matches for partially typed searches
 set ignorecase			"Searches are case insensitive...
@@ -58,12 +73,3 @@ set wildignorecase
 silent !mkdir ~/.vim/undo > /dev/null 2>&1
 set undodir=~/.vim/undo		"Persistent undo
 set undofile
-
-
-" =============== Vundle Initialization ===============
-
-
-
-filetype plugin indent on	"Enable filetype detection
-
-
