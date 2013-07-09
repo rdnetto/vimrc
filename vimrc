@@ -67,7 +67,7 @@ set bs=2			        "Working backspace
 
 " 14 tabs and indenting
 set autoindent
-set smartindent
+set nosmartindent           "Disabled - causes issues with filetype based indentation
 set smarttab
 set expandtab			    "Expand tabs to spaces
 set tabstop=4	    		"Width of a tab
