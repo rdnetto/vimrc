@@ -23,12 +23,6 @@ Bundle 'sjl/gundo.vim.git'
 Bundle 'vimez/vim-showmarks'
 Bundle 'klen/python-mode'
 
-let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of leader key
-
-" PyMode settings
-let g:pymode_lint_ignore = "E501"
-let g:pymode_lint_mccabe_complexity = 15
-
 colorscheme pablo           "Default colour scheme
 
 filetype plugin indent on	"Enable filetype detection
@@ -92,4 +86,12 @@ set wildignorecase
 silent !mkdir ~/.vim/undo > /dev/null 2>&1
 set undodir=~/.vim/undo		"Persistent undo
 set undofile
+
+
+" Plugin settings
+let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of leader key for EasyMotion
+
+" PyMode settings
+let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303"
+let g:pymode_lint_mccabe_complexity = 15
 
