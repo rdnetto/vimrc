@@ -71,7 +71,7 @@ set nosmartindent           "Disabled - causes issues with filetype based indent
 set smarttab
 set expandtab			    "Expand tabs to spaces
 set tabstop=4	    		"Width of a tab
-set shiftwidth=0	    	"Use tabstop value for indenting
+set shiftwidth=4	    	"Use tabstop value for indenting
 
 " 15 folding
 set foldmethod=syntax		"Use syntax-dependent folding
