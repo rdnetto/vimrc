@@ -95,3 +95,7 @@ let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of lead
 let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303"
 let g:pymode_lint_mccabe_complexity = 15
 
+" Relative line numbers in Normal mode only
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+" 
