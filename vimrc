@@ -13,7 +13,7 @@ call vundle#rc()
 " Comparison: http://vimcolorschemetest.googlecode.com/svn/html/index-c.html
 
 " vim-scripts on github is assumed
-Bundle 'xterm16.vim'
+Bundle 'Relaxed-Green'
 
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim.git'
@@ -27,9 +27,7 @@ Bundle 'sjl/gundo.vim.git'
 Bundle 'vimez/vim-showmarks'
 Bundle 'klen/python-mode'
 
-let xterm16_colormap = 'soft'
-let xterm16_brightness = 'default'
-colorscheme xterm16         "Default colour scheme
+colorscheme relaxedgreen    "Default colour scheme
 
 filetype plugin indent on	"Enable filetype detection
 syntax on
