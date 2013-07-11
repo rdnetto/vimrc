@@ -2,7 +2,6 @@
 version 6.0
 set nocompatible
 
-
 " =============== Begin Vundle Initialization ===============
 filetype off                "This needs to be disabled for this section
 
@@ -10,8 +9,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles to be managed: (do not put comments on the same lines as these)
+" Nice color schemes: pablo, xterm16, relaxedgreen, vividchalk.
+" Comparison: http://vimcolorschemetest.googlecode.com/svn/html/index-c.html
+
+" vim-scripts on github is assumed
+Bundle 'xterm16.vim'
+
 Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'scrooloose/nerdcommenter'
@@ -23,7 +27,9 @@ Bundle 'sjl/gundo.vim.git'
 Bundle 'vimez/vim-showmarks'
 Bundle 'klen/python-mode'
 
-colorscheme pablo           "Default colour scheme
+let xterm16_colormap = 'soft'
+let xterm16_brightness = 'default'
+colorscheme xterm16         "Default colour scheme
 
 filetype plugin indent on	"Enable filetype detection
 syntax on
