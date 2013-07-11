@@ -36,6 +36,7 @@ set ignorecase	    		"Searches are case insensitive...
 set smartcase	    		"unless they have uppercase letters
 
 "  4 displaying text
+set wrap
 set linebreak		    	"Wrap lines at convenient points
 set scrolloff=3			    "See the surrounding lines when cursor is at the edge of the screen
 set nu	     	    	    "Absolute line numbers
@@ -92,13 +93,13 @@ set undofile
 let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of leader key for EasyMotion
 
 " PyMode settings
-let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303"
-let g:pymode_lint_mccabe_complexity = 15
+let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303,E128,E124,W391,E203"
+let g:pymode_lint_mccabe_complexity = 25
 
 " Relative line numbers in Normal mode only
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
-" 
+
 " Remap home button to act like ^ instead of 0
 " NOTE: make sure that you have no trailing spaces, as they affect mappings
 :nmap <Home> ^
