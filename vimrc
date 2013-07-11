@@ -99,3 +99,8 @@ let g:pymode_lint_mccabe_complexity = 15
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 " 
+" Remap home button to act like ^ instead of 0
+" NOTE: make sure that you have no trailing spaces, as they affect mappings
+:nmap <Home> ^
+:imap <Home> <Esc>^i
+
