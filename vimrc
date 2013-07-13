@@ -26,6 +26,8 @@ Bundle 'vim-easy-align'
 Bundle 'sjl/gundo.vim.git'
 Bundle 'vimez/vim-showmarks'
 Bundle 'klen/python-mode'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
 
 colorscheme relaxedgreen    "Default colour scheme
 
