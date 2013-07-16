@@ -99,6 +99,7 @@ set undofile
 
 " Plugin settings
 let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of leader key for EasyMotion
+let g:ctrlp_working_path_mode = 'rc'
 
 " PyMode settings
 let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303,E128,E124,W391,E203"
