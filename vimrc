@@ -28,6 +28,7 @@ Bundle 'vimez/vim-showmarks'
 Bundle 'klen/python-mode'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+Bundle 'ervandew/supertab'
 
 colorscheme relaxedgreen    "Default colour scheme
 
