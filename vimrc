@@ -29,6 +29,7 @@ Bundle 'klen/python-mode'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'ervandew/supertab'
+Bundle 'airblade/vim-gitgutter'
 
 colorscheme relaxedgreen    "Default colour scheme
 
