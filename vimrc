@@ -42,6 +42,7 @@ syntax on
 set incsearch			    "Show matches for partially typed searches
 set ignorecase	    		"Searches are case insensitive...
 set smartcase	    		"unless they have uppercase letters
+set autochdir               "Set working directory to path of current file
 
 "  4 displaying text
 set wrap
