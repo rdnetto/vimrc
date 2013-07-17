@@ -14,6 +14,8 @@ call vundle#rc()
 
 " vim-scripts on github is assumed
 Bundle 'Relaxed-Green'
+" This requires the exuberant-ctags package
+Bundle 'taglist.vim'
 
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim.git'
