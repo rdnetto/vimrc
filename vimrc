@@ -117,6 +117,10 @@ autocmd InsertLeave * :set relativenumber
 :nmap <Home> ^
 :imap <Home> <Esc>^i
 
+" Use Ctrl+Tab / Ctrl+Shift+Tab to cycle through buffers
+nnoremap <c-tab> :bn<cr>
+nnoremap <c-s-tab> :bp<cr>
+
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
