@@ -132,6 +132,7 @@ let g:Tlist_Show_Menu = 1
 let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Use_SingleClick = 1
 let g:Tlist_WinWidth = 50
+let Tlist_File_Fold_Auto_Close = 1
 
 " Gundo settings
 let g:gundo_preview_bottom=1
