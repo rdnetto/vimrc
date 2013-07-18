@@ -133,6 +133,10 @@ let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Use_SingleClick = 1
 let g:Tlist_WinWidth = 50
 
+" Gundo settings
+let g:gundo_preview_bottom=1
+let g:gundo_right=1
+
 " Relative line numbers in Normal mode only
 :set relativenumber
 autocmd InsertEnter * :set number
@@ -149,6 +153,7 @@ nnoremap <c-s-tab> :bp<cr>
 
 " Remap function keys
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
+nnoremap <silent> <F8> :GundoToggle<CR>
 nnoremap <silent> <F10> :TlistToggle<CR>
 
 " Use Enter to clear highlighting
