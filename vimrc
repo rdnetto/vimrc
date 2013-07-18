@@ -30,8 +30,15 @@ Bundle 'vimez/vim-showmarks'
 Bundle 'klen/python-mode'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
-Bundle 'ervandew/supertab'
 Bundle 'airblade/vim-gitgutter'
+
+" need 7.3.584+ for YCM
+if v:version > 703 || (v:version == 703 && has('patch584'))
+    Bundle 'Valloric/YouCompleteMe'
+else
+    Bundle 'ervandew/supertab'
+    Bundle 'AutoComplPop'
+endif
 
 colorscheme relaxedgreen    "Default colour scheme
 
