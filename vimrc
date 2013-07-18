@@ -124,6 +124,15 @@ let g:ctrlp_working_path_mode = 'rc'
 let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303,E128,E124,W391,E203"
 let g:pymode_lint_mccabe_complexity = 25
 
+" TagList settings
+let g:Tlist_Close_On_Select = 1
+let g:Tlist_Exit_OnlyWindow = 1
+let g:Tlist_GainFocus_On_ToggleOpen = 1
+let g:Tlist_Show_Menu = 1
+let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Use_SingleClick = 1
+let g:Tlist_WinWidth = 50
+
 " Relative line numbers in Normal mode only
 :set relativenumber
 autocmd InsertEnter * :set number
