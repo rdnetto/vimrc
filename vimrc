@@ -18,6 +18,7 @@ Bundle 'Relaxed-Green'
 " This requires the exuberant-ctags package
 Bundle 'taglist.vim'
 Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-pyref'
 Bundle 'xolox/vim-easytags'
 
 Bundle 'gmarik/vundle'
