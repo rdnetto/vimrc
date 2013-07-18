@@ -151,6 +151,13 @@ autocmd InsertLeave * :set relativenumber
 nnoremap <c-tab> :bn<cr>
 nnoremap <c-s-tab> :bp<cr>
 
+" Clipboard mappings
+vnoremap <C-X> "+x
+vnoremap <C-C> "+y
+map <C-S-V> "+gP
+cmap <C-V> <C-R>+
+imap <C-V> <C-R>+
+
 " Remap function keys
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F8> :GundoToggle<CR>
