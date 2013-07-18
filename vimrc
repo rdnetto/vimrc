@@ -147,6 +147,10 @@ autocmd InsertLeave * :set relativenumber
 nnoremap <c-tab> :bn<cr>
 nnoremap <c-s-tab> :bp<cr>
 
+" Remap function keys
+nnoremap <silent> <F5> :NERDTreeToggle<CR>
+nnoremap <silent> <F10> :TlistToggle<CR>
+
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
