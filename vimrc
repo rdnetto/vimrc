@@ -151,6 +151,9 @@ nnoremap <c-s-tab> :bp<cr>
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F10> :TlistToggle<CR>
 
+" Use Enter to clear highlighting
+nnoremap <CR> :let @/=""<CR>:<BS><CR>
+
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
