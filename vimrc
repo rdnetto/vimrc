@@ -14,8 +14,11 @@ call vundle#rc()
 
 " vim-scripts on github is assumed
 Bundle 'Relaxed-Green'
+
 " This requires the exuberant-ctags package
 Bundle 'taglist.vim'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-easytags'
 
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim.git'
@@ -52,6 +55,10 @@ set incsearch			    "Show matches for partially typed searches
 set ignorecase	    		"Searches are case insensitive...
 set smartcase	    		"unless they have uppercase letters
 set autochdir               "Set working directory to path of current file
+
+"  3 tags
+set tags=.git/tags;$HOME
+set tagrelative
 
 "  4 displaying text
 set wrap
