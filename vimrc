@@ -164,6 +164,7 @@ cmap <C-V> <C-R>+
 imap <C-V> <C-R>+
 
 " Remap function keys
+nnoremap <silent> <F3> :CtrlPMRUFiles<CR>
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F8> :GundoToggle<CR>
 nnoremap <silent> <F10> :TlistToggle<CR>
