@@ -39,9 +39,11 @@ Bundle 'airblade/vim-gitgutter'
 " need 7.3.584+ for YCM
 if v:version > 703 || (v:version == 703 && has('patch584'))
     Bundle 'Valloric/YouCompleteMe'
+
+    "YCM uses the Jedi backend for Python autocompletion anyway, so disable it
+    let g:jedi#popup_on_dot = 0
 else
-    Bundle 'ervandew/supertab'
-    Bundle 'AutoComplPop'
+    Bundle 'davidhalter/jedi-vim'
 endif
 
 colorscheme relaxedgreen    "Default colour scheme
