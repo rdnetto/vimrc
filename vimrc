@@ -14,6 +14,7 @@ call vundle#rc()
 
 " vim-scripts on github is assumed
 Bundle 'Relaxed-Green'
+Bundle 'restore_view.vim'
 
 " This requires the exuberant-ctags package
 Bundle 'taglist.vim'
