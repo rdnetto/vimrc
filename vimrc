@@ -159,8 +159,11 @@ autocmd InsertLeave * :set relativenumber
 
 " Remap home button to act like ^ instead of 0
 " NOTE: make sure that you have no trailing spaces, as they affect mappings
-:nmap <Home> ^
-:imap <Home> <Esc>^i
+nmap <Home> ^
+imap <Home> <Esc>^i
+
+" Use Ctrl+Backspace to delete the last word
+imap <C-BS> <C-W>
 
 " Use Ctrl+Tab / Ctrl+Shift+Tab to cycle through buffers
 nnoremap <c-tab> :bn<cr>
