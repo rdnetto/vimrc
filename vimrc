@@ -38,6 +38,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'mileszs/ack.vim'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'adimit/prolog.vim'
 
 " need 7.3.584+ for YCM
 if v:version > 703 || (v:version == 703 && has('patch584'))
