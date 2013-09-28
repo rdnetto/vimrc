@@ -90,6 +90,7 @@ set ruler		    	    "Line/Col numbers in corner
 
 " 13 editing text
 set bs=2			        "Working backspace
+set nrformats=hex           "Don't use octal when incrementing numbers with leading zeros
 
 " 14 tabs and indenting
 set autoindent
