@@ -39,6 +39,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'mileszs/ack.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'adimit/prolog.vim'
+Bundle 'wannesm/wmgraphviz.vim'
 
 " need 7.3.584+ for YCM
 if v:version > 703 || (v:version == 703 && has('patch584'))
@@ -153,6 +154,8 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+"WM Graphviz settings
+let g:WMGraphviz_output = "png"
 
 " Relative line numbers in Normal mode only
 :set relativenumber
