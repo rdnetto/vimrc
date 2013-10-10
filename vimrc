@@ -121,6 +121,9 @@ silent !mkdir ~/.vim/undo > /dev/null 2>&1
 set undodir=~/.vim/undo		"Persistent undo
 set undofile
 
+if has('gui_running')
+    set guifont=Droid\ Sans\ Mono\ 12
+endif
 
 " Plugin settings
 let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of leader key for EasyMotion
