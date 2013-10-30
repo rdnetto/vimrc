@@ -54,6 +54,7 @@ colorscheme relaxedgreen    "Default colour scheme
 
 filetype plugin indent on	"Enable filetype detection
 syntax on
+runtime macros/matchit.vim  "Enable built-in matchit plugin
 " ===============  End Vundle Initialization  ===============
 
 
