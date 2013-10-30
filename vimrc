@@ -178,6 +178,13 @@ imap <C-BS> <C-W>
 nnoremap <c-tab> :bn<cr>
 nnoremap <c-s-tab> :bp<cr>
 
+" Arrow key mappings. 
+" NOTE: This is broken for insert mode (which ironically, is where it would be most useful)
+nnoremap <Up>   gk
+nnoremap <Down> gj
+inoremap <buffer> <silent> <Up>   <C-o>gk
+inoremap <buffer> <silent> <Down> <C-o>gj
+
 " Clipboard mappings
 vnoremap <C-X> "+x
 vnoremap <C-C> "+y
