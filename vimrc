@@ -75,6 +75,7 @@ set scrolloff=3			    "See the surrounding lines when cursor is at the edge of t
 set nu	     	    	    "Absolute line numbers
 set window=40
 set textwidth=0             "Disable automatically creating a new line after 80 chars
+set nolist
 
 "  5 syntax, highlighting and spelling
 set hlsearch
