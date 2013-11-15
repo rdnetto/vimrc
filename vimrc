@@ -43,6 +43,9 @@ Bundle 'mileszs/ack.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'adimit/prolog.vim'
 Bundle 'wannesm/wmgraphviz.vim'
+Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'kana/vim-textobj-lastpat'
+Bundle 'tpope/vim-abolish'
 
 " need 7.3.584+ for YCM
 if v:version > 703 || (v:version == 703 && has('patch584'))
