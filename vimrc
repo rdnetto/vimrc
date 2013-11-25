@@ -44,6 +44,7 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'adimit/prolog.vim'
 Bundle 'wannesm/wmgraphviz.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-lastpat'
 Bundle 'tpope/vim-abolish'
 
