@@ -119,7 +119,7 @@ set autoread			    "Read files when modified
 
 " 20 command line editing
 set history=100
-set wildmode=list:longest	"BASH-style path completion
+set wildmode=list:longest,full	"ZSH-style path completion
 set wildmenu
 set wildignore=*.o,*.obj,*~     "Ignore these files when doing path-completion
 set wildignore+=*vim/backups*
