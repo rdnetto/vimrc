@@ -1,0 +1,62 @@
+F1              pyref - looks up docs on identifier under cursor. (Requires the DOC useflag - BROKEN)
+F3              Recently Used Files
+F4              Close buffer
+F5              Nerd Tree - view current folder
+F8              Undo history
+F10             Tag list - code structure
+
+\*              Recursive grep for symbol under cursor. (TODO: remap to use ack, remove vim-visual-star)
+\cu             Nerd Commenter - Uncomments the current line
+\<Space>[N] X   Easy Align [V mode] - aligns selection about the Nth 'X'. (N is optional)
+mX              Set mark X to cursor position
+`X              Go to mark X (as indicated in gutter)
+
+SURROUND.VIM
+ys<MOTION>]     Surround MOTION with ] brackets (use left bracket to add spaces). Supports XML tags as well.
+yss]            Surround line with ] brackets
+csAB            Change delimeter 'A' to 'B'. e.g. cs'"
+ds]             Delete surrounding [] brackets
+S               [V mode]: surround selection
+
+VIM-ABOLISH
+crs             Coerce to snake_case
+crc             Coerce to camelCase
+crm             Coerce to MixedCase
+cru             Coerce to UPPER_CASE
+
+VIM-UNIMPAIRED
+]q              Next error (:cn). Capitalise to go to first/last.
+]b              Next buffer (:bn, <C-Tab>).
+]t              Next tag (:tn)
+]n              Next git merge conflict marker.
+]h              Next git hunk (vim-gitgutter)
+
+]<Space>        Add (COUNT) blank lines below the cursor. Use [ for above.
+]e              Move the current line (count) lines down. Use [ for above.
+coc/cou/cox     Toggle cursor line/col/both.
+col             Toggle list mode (displays unprintable chars, ends lines with $)
+cos             Toggle spell check.
+cow             Toggle line wrap
+yi/ya/yo...     Prefix any insert-mode entering command with y to enter paste mode.
+
+[x              XML encode. Prefix with count or append motion. ] decodes.
+[u              URL encode.
+[y              C string encode/escape.
+
+PYTHON SPECIFIC - PYMODE/ROPE
+<C-Space>       Autocomplete (code aware)
+<C-C>g          Go to definition
+<C-C>d          Show documentation in panel
+<C-c>f          Find references
+]m              Go to next function
+iM              text object: inside method
+iC              text object: inside class
+
+
+:<RANGE>Subvert/foo/bar/g       Swap foo and bar. Can use f{o,a}r to handle for+far at once. (vim-abolish)
+:GitGutterLineHighlightsToggle  Highlights lines that are marked by git gutter
+:Ack/:LAck                      Runs ack, puts results in quickfix/location window
+:Remove, :Move, :Chmod          Affect the file in the current buffer, updating the buffer to match.
+:Find                           Runs find, loads results into quickfix list
+:GraphvizInteractive            Auto-updating view for graphs
+
