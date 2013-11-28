@@ -187,6 +187,9 @@ imap <C-BS> <C-W>
 nnoremap <c-tab> :bn<cr>
 nnoremap <c-s-tab> :bp<cr>
 
+" Easy-align mapping
+vnoremap <silent> <Leader><Space> :EasyAlign<Space>
+
 " Arrow key mappings. 
 " NOTE: This is broken for insert mode (which ironically, is where it would be most useful)
 nnoremap <Up>   gk
