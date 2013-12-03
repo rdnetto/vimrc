@@ -210,8 +210,9 @@ nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F8> :GundoToggle<CR>
 nnoremap <silent> <F10> :TlistToggle<CR>
 
-" Use Enter to clear highlighting
-nnoremap <CR> :let @/=""<CR>:<BS><CR>
+" Use Enter or <C-L> to clear highlighting
+nnoremap <CR> :let @/=""<CR><CR>
+nnoremap <C-L> :let @/=""<CR><C-L>
 
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
