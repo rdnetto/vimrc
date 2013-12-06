@@ -220,7 +220,7 @@ nnoremap <silent> <S-F4> :bd!<CR>
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F6> :ccl<CR>
 nnoremap <silent> <F8> :GundoToggle<CR>
-nnoremap <silent> <F10> :TlistToggle<CR>
+nnoremap <silent> <F10> :TlistToggle<CR>:set cursorline<CR>
 
 " Use Enter or <C-L> to clear highlighting
 nnoremap <CR> :let @/=""<CR><CR>
