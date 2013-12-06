@@ -48,6 +48,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-lastpat'
 Bundle 'tpope/vim-abolish'
+Bundle 'mattboehm/vim-unstack'
 
 " need 7.3.584+ for YCM
 if v:version > 703 || (v:version == 703 && has('patch584'))
@@ -171,8 +172,11 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-"WM Graphviz settings
+" WM Graphviz settings
 let g:WMGraphviz_output = "png"
+
+" Vim-unstack settings
+let g:unstack_populate_quickfix = 1
 
 " Relative line numbers in Normal mode only
 :set relativenumber

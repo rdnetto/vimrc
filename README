@@ -8,8 +8,11 @@ F10             Tag list - code structure
 \*              Recursive grep for symbol under cursor. (TODO: remap to use ack, remove vim-visual-star)
 \cu             Nerd Commenter - Uncomments the current line
 \<Space>[N] X   Easy Align [V mode] - aligns selection about the Nth 'X'. (N is optional)
+\s              Vim-Unstack [V mode] - when a stack trace is selected, open as a series of vsplit windows
 mX              Set mark X to cursor position
 `X              Go to mark X (as indicated in gutter)
+^W<ARROW>       Go to window in <DIR>
+^Wq             Close current window
 
 SURROUND.VIM
 ys<MOTION>]     Surround MOTION with ] brackets (use left bracket to add spaces). Supports XML tags as well.
