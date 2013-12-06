@@ -214,8 +214,11 @@ imap <C-V> <C-R>+
 " Remap function keys
 nnoremap <silent> <F2> :CtrlPTag<CR>
 nnoremap <silent> <F3> :CtrlPMRUFiles<CR>
+nnoremap <silent> <S-F3> :CtrlPBuffer<CR>
 nnoremap <silent> <F4> :bd<CR>
+nnoremap <silent> <S-F4> :bd!<CR>
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
+nnoremap <silent> <F6> :ccl<CR>
 nnoremap <silent> <F8> :GundoToggle<CR>
 nnoremap <silent> <F10> :TlistToggle<CR>
 
