@@ -178,6 +178,9 @@ let g:WMGraphviz_output = "png"
 " Vim-unstack settings
 let g:unstack_populate_quickfix = 1
 
+" Vim-gitgutter settings
+let g:gitgutter_realtime = 0
+
 " Relative line numbers in Normal mode only
 :set relativenumber
 autocmd InsertEnter * :set number
