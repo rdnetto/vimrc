@@ -229,6 +229,9 @@ nnoremap <silent> <F10> :TlistToggle<CR>:set cursorline<CR>
 nnoremap <CR> :let @/=""<CR><CR>
 nnoremap <C-L> :let @/=""<CR><C-L>
 
+" Use Space to toggle folds
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/

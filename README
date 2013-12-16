@@ -16,6 +16,8 @@ mX              Set mark X to cursor position
 `X              Go to mark X (as indicated in gutter)
 ^W<ARROW>       Go to window in <DIR>
 ^Wq             Close current window
+zf/zc/zo/za     Create/close/open/toggle a fold
+zm/zr           Close/open a level of folds. (more/reduce folding)
 
 SURROUND.VIM
 ys<MOTION>]     Surround MOTION with ] brackets (use left bracket to add spaces). Supports XML tags as well.
