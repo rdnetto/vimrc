@@ -16,6 +16,7 @@ mX              Set mark X to cursor position
 `X              Go to mark X (as indicated in gutter)
 ^W<ARROW>       Go to window in <DIR>
 ^Wq             Close current window
+^T/^D           [I mode]: (un)indent the current line
 zf/zc/zo/za     Create/close/open/toggle a fold
 zm/zr           Close/open a level of folds. (more/reduce folding)
 
