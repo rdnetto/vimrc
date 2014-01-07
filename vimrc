@@ -49,6 +49,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-lastpat'
 Bundle 'tpope/vim-abolish'
 Bundle 'mattboehm/vim-unstack'
+Bundle 'michaeljsmith/vim-indent-object'
 
 " need 7.3.584+ for YCM
 if v:version > 703 || (v:version == 703 && has('patch584'))

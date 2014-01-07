@@ -19,6 +19,7 @@ mX              Set mark X to cursor position
 ^T/^D           [I mode]: (un)indent the current line
 zf/zc/zo/za     Create/close/open/toggle a fold
 zm/zr           Close/open a level of folds. (more/reduce folding)
+ai/ii           Text object for block of indented code, optionally including the previous unindented line. Cursor must be inside indented block.
 
 SURROUND.VIM
 ys<MOTION>]     Surround MOTION with ] brackets (use left bracket to add spaces). Supports XML tags as well.
