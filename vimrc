@@ -41,7 +41,6 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-speeddating'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'mileszs/ack.vim'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'adimit/prolog.vim'
 Bundle 'wannesm/wmgraphviz.vim'
 Bundle 'nelstrom/vim-visual-star-search'
@@ -50,14 +49,7 @@ Bundle 'kana/vim-textobj-lastpat'
 Bundle 'tpope/vim-abolish'
 Bundle 'mattboehm/vim-unstack'
 Bundle 'michaeljsmith/vim-indent-object'
-
-" need 7.3.584+ for YCM
-if v:version > 703 || (v:version == 703 && has('patch584'))
-    Bundle 'Valloric/YouCompleteMe'
-
-    "YCM uses the Jedi backend for Python autocompletion anyway, so disable it
-    let g:jedi#popup_on_dot = 0
-endif
+Bundle 'Valloric/YouCompleteMe'
 
 colorscheme relaxedgreen    "Default colour scheme
 
