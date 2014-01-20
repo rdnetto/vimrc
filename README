@@ -38,7 +38,7 @@ VIM-UNIMPAIRED
 ]q              Next error (:cn). Capitalise to go to first/last.
 ]b              Next buffer (:bn, <C-Tab>).
 ]t              Next tag (:tn)
-]n              Next git merge conflict marker.
+]n              Next git merge conflict marker. Use :diffget to select hunks.
 ]h              Next git hunk (vim-gitgutter)
 
 ]<Space>        Add (COUNT) blank lines below the cursor. Use [ for above.
