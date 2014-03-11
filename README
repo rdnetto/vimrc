@@ -5,7 +5,8 @@ F3-S            Buffers (CtrlP)
 F4              Close buffer
 F5              Nerd Tree - view current folder
 F6              Close quickfix list (:ccl)
-F8              Undo history
+F7              Undo history
+F8              Make (:make)
 F10             Tag list - code structure
 
 \*              Recursive grep for symbol under cursor. (TODO: remap to use ack, remove vim-visual-star)
