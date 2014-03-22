@@ -50,6 +50,8 @@ Bundle 'tpope/vim-abolish'
 Bundle 'mattboehm/vim-unstack'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'laurilehmijoki/haskellmode-vim'
+Bundle 'Twinside/vim-haskellFold'
 
 colorscheme relaxedgreen    "Default colour scheme
 
@@ -176,6 +178,9 @@ let g:unstack_populate_quickfix = 1
 
 " Vim-gitgutter settings
 let g:gitgutter_realtime = 0
+
+" Haskell mode settings
+let g:haddock_browser = "xdg-open"
 
 " Relative line numbers in Normal mode only
 :set relativenumber
