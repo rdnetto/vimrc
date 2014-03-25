@@ -127,7 +127,10 @@ silent !mkdir ~/.vim/undo > /dev/null 2>&1
 set undodir=~/.vim/undo		"Persistent undo
 set undofile
 
-if has('gui_running')
+" Set font, accounting for DPI. Desktop has 86, laptop has 96
+if system("xdpyinfo | perl -ne '/resolution.*x([0-9]+)/ && print $1;'") < 90
+    set guifont=Droid\ Sans\ Mono\ 11
+else
     set guifont=Droid\ Sans\ Mono\ 12
 endif
 
