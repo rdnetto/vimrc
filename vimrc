@@ -164,6 +164,17 @@ let g:Tlist_Use_SingleClick = 1
 let g:Tlist_WinWidth = 50
 let Tlist_File_Fold_Auto_Close = 1
 
+" Easytags settings - requires hasktags package for Haskell support
+let g:easytags_languages = {
+\   'haskell': {
+\     'cmd': "/usr/bin/hasktags",
+\       'args': ["-c"],
+\       'fileoutput_opt': '-f',
+\       'stdout_opt': '-f-',
+\       'recurse_flag': ''
+\   }
+\}
+
 " Gundo settings
 let g:gundo_preview_bottom=1
 let g:gundo_right=1
