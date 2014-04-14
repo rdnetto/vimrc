@@ -50,7 +50,9 @@ Bundle 'tpope/vim-abolish'
 Bundle 'mattboehm/vim-unstack'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'laurilehmijoki/haskellmode-vim'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'bitc/vim-hdevtools'
 Bundle 'Twinside/vim-haskellFold'
 
 colorscheme relaxedgreen    "Default colour scheme
