@@ -13,6 +13,7 @@ F10             Tag list - code structure
 \cu             Nerd Commenter - Uncomments the current line
 \<Space>[N] X   Easy Align [V mode] - aligns selection about the Nth 'X'. (N is optional)
 \s              Vim-Unstack [V mode] - when a stack trace is selected, open as a series of vsplit windows
+\t              TaskList: view TODOs, etc. in current file
 mX              Set mark X to cursor position
 `X              Go to mark X (as indicated in gutter)
 ^W<ARROW>       Go to window in <DIR>
