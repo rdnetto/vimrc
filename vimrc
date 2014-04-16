@@ -139,6 +139,8 @@ endif
 
 " Plugin settings
 let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of leader key for EasyMotion
+let g:tlWindowPosition = 1                  " Open TaskList on the bottom of the screen
+
 
 " PyMode settings
 let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303,E128,E124,W391,E203,C0110,C0301"
@@ -242,6 +244,7 @@ nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F6> :ccl<CR>
 nnoremap <silent> <F7> :GundoToggle<CR>
 nnoremap <silent> <F8> :wa<CR>:make<CR>
+map <F9> <Plug>TaskList
 nnoremap <silent> <F10> :TlistToggle<CR>:set cursorline<CR>
 
 " Use Enter or <C-L> to clear highlighting
