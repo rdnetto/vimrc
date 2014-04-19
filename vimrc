@@ -55,8 +55,14 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'bitc/vim-hdevtools'
 Bundle 'Twinside/vim-haskellFold'
+Bundle 'tomasr/molokai'
 
-colorscheme relaxedgreen    "Default colour scheme
+" Set colorscheme
+if has("gui_running")
+    colorscheme molokai
+else
+    colorscheme relaxedgreen
+endif
 
 filetype plugin indent on	"Enable filetype detection
 syntax on
