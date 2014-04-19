@@ -254,7 +254,7 @@ nnoremap <CR> :let @/=""<CR><CR>
 nnoremap <C-L> :let @/=""<CR><C-L>
 
 " Use Space to toggle folds
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+nnoremap <silent> <Space> @=(foldlevel('.')?'zA':"\<Space>")<CR>
 
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
