@@ -206,6 +206,9 @@ let g:haddock_browser = "xdg-open"
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
+" Fix Y so that is behaves like D
+map Y y$
+
 " Remap home button to act like ^ instead of 0
 " NOTE: make sure that you have no trailing spaces, as they affect mappings
 nmap <Home> ^
@@ -222,7 +225,6 @@ nnoremap <c-s-tab> :bp<cr>
 vnoremap <silent> <Leader><Space> :EasyAlign<Space>
 
 " Arrow key mappings. 
-" NOTE: This is broken for insert mode (which ironically, is where it would be most useful)
 nnoremap <Up>   gk
 nnoremap <Down> gj
 inoremap <buffer> <silent> <Up>   <C-o>gk
