@@ -77,7 +77,6 @@ set smartcase	    		"unless they have uppercase letters
 set autochdir               "Set working directory to path of current file
 
 "  3 tags
-set tags=.git/tags;$HOME
 set tagrelative
 
 "  4 displaying text
@@ -174,6 +173,7 @@ let g:Tlist_WinWidth = 50
 let Tlist_File_Fold_Auto_Close = 1
 
 " Easytags settings - requires hasktags package for Haskell support
+let g:easytags_dynamic_files = 2
 let g:easytags_languages = {
 \   'haskell': {
 \     'cmd': "/usr/bin/hasktags",
