@@ -137,9 +137,9 @@ set undofile
 
 " Set font, accounting for DPI. Desktop has 86, laptop has 96
 if system("xdpyinfo | perl -ne '/resolution.*x([0-9]+)/ && print $1;'") < 90
-    set guifont=Droid\ Sans\ Mono\ 11
+    set guifont=DejaVu\ Sans\ Mono\ 11
 else
-    set guifont=Droid\ Sans\ Mono\ 12
+    set guifont=DejaVu\ Sans\ Mono\ 12
 endif
 
 " Plugin settings
