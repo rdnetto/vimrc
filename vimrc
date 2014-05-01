@@ -144,7 +144,6 @@ endif
 
 " Plugin settings
 let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of leader key for EasyMotion
-let g:tlWindowPosition = 1                  " Open TaskList on the bottom of the screen
 
 
 " PyMode settings
@@ -171,6 +170,10 @@ let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Use_SingleClick = 1
 let g:Tlist_WinWidth = 50
 let Tlist_File_Fold_Auto_Close = 1
+
+" TaskList
+let g:tlWindowPosition = 1                  " Open TaskList on the bottom of the screen
+let g:tlTokenList = ['TODO', 'WIP', 'BUG']
 
 " Easytags settings - requires hasktags package for Haskell support
 let g:easytags_dynamic_files = 2
