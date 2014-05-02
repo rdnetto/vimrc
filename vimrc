@@ -173,7 +173,7 @@ let Tlist_File_Fold_Auto_Close = 1
 
 " TaskList
 let g:tlWindowPosition = 1                  " Open TaskList on the bottom of the screen
-let g:tlTokenList = ['TODO', 'WIP', 'BUG']
+let g:tlTokenList = ['WIP', 'BUG', 'TODO']
 
 " Easytags settings - requires hasktags package for Haskell support
 let g:easytags_dynamic_files = 2
