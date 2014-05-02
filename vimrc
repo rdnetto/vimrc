@@ -210,6 +210,9 @@ let g:gitgutter_realtime = 0
 " Haskell mode settings
 let g:haddock_browser = "xdg-open"
 
+" Hdevtools settings
+let g:hdevtools_options = '-g -hide-package=monads-tf'
+
 " Relative line numbers in Normal mode only
 :set relativenumber
 autocmd InsertEnter * :set number
