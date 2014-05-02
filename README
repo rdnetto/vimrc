@@ -6,7 +6,8 @@ F4              Close buffer
 F5              Nerd Tree - view current folder
 F6              Close quickfix list (:ccl)
 F7              Undo history
-F8              Make (:make)
+F8              Write all buffers and Make
+F8-S            Write current buffer and Make
 F9              TaskList: view TODOs, etc. in current file
 F10             Tag list - code structure
 

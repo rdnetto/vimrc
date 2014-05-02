@@ -255,6 +255,7 @@ nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F6> :ccl<CR>
 nnoremap <silent> <F7> :GundoToggle<CR>
 nnoremap <silent> <F8> :wa<CR>:make<CR>
+nnoremap <silent> <S-F8> :w<CR>:make<CR>
 map <F9> <Plug>TaskList
 nnoremap <silent> <F10> :TlistToggle<CR>:set cursorline<CR>
 
