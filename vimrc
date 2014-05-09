@@ -213,6 +213,7 @@ let g:haddock_browser = "xdg-open"
 " Hdevtools settings
 let g:hdevtools_options = '-g -hide-package=monads-tf'
 
+
 " Relative line numbers in Normal mode only
 :set relativenumber
 autocmd InsertEnter * :set number
@@ -220,6 +221,9 @@ autocmd InsertLeave * :set relativenumber
 
 " Fix Y so that is behaves like D
 map Y y$
+
+" Force Markdown for *.md, since I'm never going to work with Modula-2 files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Remap home button to act like ^ instead of 0
 " NOTE: make sure that you have no trailing spaces, as they affect mappings
