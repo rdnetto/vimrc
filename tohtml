@@ -1,0 +1,52 @@
+" This is a Vimscript used for printing files with syntax colouring
+
+"  1 important
+version 6.0
+set nocompatible
+
+" =============== Begin Vundle Initialization ===============
+filetype off                "This needs to be disabled for this section
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" vim-scripts on github is assumed
+Bundle 'Relaxed-Green'
+Bundle 'tomasr/molokai'
+
+" Set colorscheme
+colorscheme relaxedgreen
+
+filetype plugin indent on	"Enable filetype detection
+syntax on
+runtime plugin/tohtml.vim
+" ===============  End Vundle Initialization  ===============
+
+" Settings needed to preserve formatting
+set wrap
+set linebreak		    	"Wrap lines at convenient points
+set scrolloff=3			    "See the surrounding lines when cursor is at the edge of the screen
+set nu	     	    	    "Absolute line numbers
+set window=40
+set textwidth=0             "Disable automatically creating a new line after 80 chars
+set nolist
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Printing stuff
+function Print_html_file()
+    if $FILE_FORMAT != ""
+        set filetype=$FILE_FORMAT
+    endif
+
+    if $OUTPUT == ""
+        echoerr "Output path not defined"
+    else
+        TOhtml
+        w! $OUTPUT
+        qa!
+    endif
+endfunction
+
+autocmd BufRead * :call Print_html_file()
+
