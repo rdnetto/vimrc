@@ -39,6 +39,10 @@ function Print_html_file()
         set filetype=$FILE_FORMAT
     endif
 
+    if $LINE_NO == 0
+        set nonu
+    endif
+
     if $OUTPUT == ""
         echoerr "Output path not defined"
     else
