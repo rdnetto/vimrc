@@ -56,6 +56,7 @@ Bundle 'eagletmt/ghcmod-vim'
 Bundle 'bitc/vim-hdevtools'
 Bundle 'Twinside/vim-haskellFold'
 Bundle 'tomasr/molokai'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " Set colorscheme
 if has("gui_running")
@@ -213,6 +214,8 @@ let g:haddock_browser = "xdg-open"
 " Hdevtools settings
 let g:hdevtools_options = '-g -hide-package=monads-tf -g -fglasgow-exts'
 
+" Latex-Box settings
+let g:LatexBox_Folding = 1
 
 " Relative line numbers in Normal mode only
 :set relativenumber

@@ -65,6 +65,11 @@ PYTHON SPECIFIC - PYMODE/ROPE
 iM              text object: inside method
 iC              text object: inside class
 
+LATEX SPECIFIC - LATEX-BOX
+\ll             Compile
+\lv             View PDF
+\lt             Open table of contents
+
 
 :<RANGE>Subvert/foo/bar/g       Swap foo and bar. Can use f{o,a}r to handle for+far at once. (vim-abolish)
 :GitGutterLineHighlightsToggle  Highlights lines that are marked by git gutter
