@@ -79,6 +79,7 @@ set autochdir               "Set working directory to path of current file
 
 "  3 tags
 set tagrelative
+set tags=$HOME/.vim/tags
 
 "  4 displaying text
 set wrap
