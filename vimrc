@@ -211,7 +211,7 @@ let g:gitgutter_realtime = 0
 let g:haddock_browser = "xdg-open"
 
 " Hdevtools settings
-let g:hdevtools_options = '-g -hide-package=monads-tf'
+let g:hdevtools_options = '-g -hide-package=monads-tf -g -fglasgow-exts'
 
 
 " Relative line numbers in Normal mode only
