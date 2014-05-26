@@ -70,6 +70,12 @@ LATEX SPECIFIC - LATEX-BOX
 \lv             View PDF
 \lt             Open table of contents
 
+]s              Next misspelled word
+zg              Add word to spellfile
+z=              View options for the current word. Can also use <C-X>S in insert mode.
+1z=             Replace the current word with the most likely candidate
+:spellrepall    Repeat z= for all other instances of that word.
+
 
 :<RANGE>Subvert/foo/bar/g       Swap foo and bar. Can use f{o,a}r to handle for+far at once. (vim-abolish)
 :GitGutterLineHighlightsToggle  Highlights lines that are marked by git gutter

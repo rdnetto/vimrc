@@ -92,6 +92,7 @@ set nolist
 
 "  5 syntax, highlighting and spelling
 set hlsearch
+set spellfile=$HOME/.vim/spell/en.utf-8.add
 
 "  6 multiple windows
 set laststatus=2		    "Always show the status bar
