@@ -100,6 +100,9 @@ set hidden			        "Keep files open in the background
 "  8 terminal
 set title	    		    "Set title in console
 
+"  9 mouse
+set mousemodel=popup_setpos "Enable context menu (right-click) in GUI
+
 " 11 messages and info
 set showcmd
 set nosmd                   "Don't show mode, as Powerline makes it redundant 
