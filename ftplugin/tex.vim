@@ -7,6 +7,7 @@ set foldmethod=expr
 
 " Remap function keys so that they perform equivalent functions
 nnoremap <silent> <F8> :wa<CR>:Latexmk<CR>:LatexView<CR>
+nnoremap <silent> <S-F8> :wa<CR>:Latexmk<CR>
 nnoremap <silent> <F10> :LatexTOC<CR>
 
 let g:LatexBox_split_width=50
