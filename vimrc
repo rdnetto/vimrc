@@ -61,6 +61,7 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'idanarye/vim-vebugger'
 Bundle 'chrisbra/Recover.vim'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'jayflo/vim-skip'
 
 " Set colorscheme
 if has("gui_running")
