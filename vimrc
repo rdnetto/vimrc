@@ -59,6 +59,7 @@ Bundle 'Twinside/vim-haskellFold'
 Bundle 'tomasr/molokai'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'idanarye/vim-vebugger'
+Bundle 'chrisbra/Recover.vim'
 
 " Set colorscheme
 if has("gui_running")
