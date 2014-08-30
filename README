@@ -3,7 +3,6 @@ F2              Tags (CtrlP)
 F3              Recently Used Files (CtrlP)
 F3-S            Buffers (CtrlP)
 F4              Close buffer
-F5              Nerd Tree - view current folder
 F6              Close quickfix list (:ccl)
 F8              Write all buffers and Make
 F8-S            Write current buffer and Make
