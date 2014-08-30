@@ -57,6 +57,7 @@ Bundle 'bitc/vim-hdevtools'
 Bundle 'Twinside/vim-haskellFold'
 Bundle 'tomasr/molokai'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'idanarye/vim-vebugger'
 
 " Set colorscheme
 if has("gui_running")
@@ -150,7 +151,7 @@ endif
 
 " Plugin settings
 let g:EasyMotion_leader_key = '<Leader>'    " Don't require a double tap of leader key for EasyMotion
-
+let g:vebugger_leader='<Leader>d'           " Enable keymaps. TODO: add keymap/function for autostarting debugger
 
 " PyMode settings
 let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303,E128,E124,W391,E203,C0110,C0301"

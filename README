@@ -76,6 +76,16 @@ z=              View options for the current word. Can also use <C-X>S in insert
 1z=             Replace the current word with the most likely candidate
 :spellrepall    Repeat z= for all other instances of that word.
 
+DEBUGGING (see :help vebugger-keymaps)
+:VBGstartGDB    Start debugger (requires executable name as arg, supports D, PDB, etc.)
+:VBGkill        Stop debugger (alternatively, just let program terminate)
+\di \do \dO     Step In/Over/Out
+\dc             Continue
+\db             Toggle current line as breakpoint
+\dB             Clear all breakpoints
+\de             Evaluate the word (e.g. variable) under the cursor / selected
+\dE             Evaluate an arbitrary expression
+\dx \dX         Execute the current line / an arbitrary expression.
 
 :<RANGE>Subvert/foo/bar/g       Swap foo and bar. Can use f{o,a}r to handle for+far at once. (vim-abolish)
 :GitGutterLineHighlightsToggle  Highlights lines that are marked by git gutter
