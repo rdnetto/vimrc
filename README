@@ -54,6 +54,11 @@ yi/ya/yo...     Prefix any insert-mode entering command with y to enter paste mo
 [u              URL encode.
 [y              C string encode/escape.
 
+MULTIPLE CURSORS
+<C-n>           Select current word, and go to next instance of word (*)
+<C-p>           Deselect current word and go to previous word
+<C-x>           Deselect current word and go to next word
+
 PYTHON SPECIFIC - PYMODE/ROPE
 <C-Space>       Autocomplete (code aware)
 <C-C>g          Go to definition
