@@ -245,6 +245,9 @@ let g:hdevtools_options = '-g -hide-package=monads-tf -g -fglasgow-exts'
 " Latex-Box settings
 let g:LatexBox_Folding = 1
 
+" Eclim setting - needed for YCM
+let g:EclimCompletionMethod = 'omnifunc'
+
 " Vim-skip settings
 let g:vimskip_mapforwardskip = '<Leader>s'
 let g:vimskip_mapbackwardskip = '<Leader>S'
