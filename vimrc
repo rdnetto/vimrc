@@ -50,7 +50,7 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'sjl/gundo.vim.git'
-NeoBundle 'vim-scripts/ShowMarks'
+NeoBundle 'bootleq/ShowMarks'
 NeoBundle 'vim-scripts/TaskList.vim'
 NeoBundle 'klen/python-mode'
 NeoBundle 'tpope/vim-surround'
@@ -230,6 +230,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:WMGraphviz_output = "png"
 
 " Vim-unstack settings
+let g:unstack_mapkey = '<S-Leader>s'
 let g:unstack_populate_quickfix = 1
 
 " Vim-gitgutter settings
@@ -243,6 +244,11 @@ let g:hdevtools_options = '-g -hide-package=monads-tf -g -fglasgow-exts'
 
 " Latex-Box settings
 let g:LatexBox_Folding = 1
+
+" Vim-skip settings
+let g:vimskip_mapforwardskip = '<Leader>s'
+let g:vimskip_mapbackwardskip = '<Leader>S'
+let g:vimskip_maptocenter = '<Leader>gs'
 
 " Relative line numbers in Normal mode only
 :set relativenumber
