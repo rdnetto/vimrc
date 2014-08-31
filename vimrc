@@ -1,80 +1,94 @@
-"  1 important
-version 6.0
-set nocompatible
+" =============== Begin NeoBundle Initialization ===============
+" Initialize
+if has ('vim_starting')
+    set nocompatible
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" =============== Begin Vundle Initialization ===============
-filetype off                "This needs to be disabled for this section
+call neobundle#begin(expand('~/.vim/bundle/'))
+let g:neobundle#install_max_processes = 8
+let g:neobundle#install_process_timeout = 500
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" NeoBundle dependencies
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/unite.vim'
 
-" Bundles to be managed: (do not put comments on the same lines as these)
+" These plugins need to be compiled
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \     'windows' : 'tools\\update-dll-mingw',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \    },
+            \ }
+
+NeoBundle 'Valloric/YouCompleteMe', {
+            \ 'build' : {
+            \     'unix' : './install.sh --clang-completer --system-libclang',
+            \    },
+            \ }
+
 " Nice color schemes: pablo, xterm16, relaxedgreen, vividchalk.
 " Comparison: http://vimcolorschemetest.googlecode.com/svn/html/index-c.html
 
 " vim-scripts on github is assumed
-Bundle 'Relaxed-Green'
-Bundle 'restore_view.vim'
+NeoBundle 'Relaxed-Green'
+NeoBundle 'restore_view.vim'
 
 " This requires the exuberant-ctags package
-Bundle 'taglist.vim'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-pyref'
-Bundle 'xolox/vim-easytags'
+NeoBundle 'taglist.vim'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-pyref'
+NeoBundle 'xolox/vim-easytags'
 
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'vim-scripts/ShowMarks'
-Bundle 'vim-scripts/TaskList.vim'
-Bundle 'klen/python-mode'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-characterize'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mileszs/ack.vim'
-Bundle 'adimit/prolog.vim'
-Bundle 'wannesm/wmgraphviz.vim'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kana/vim-textobj-lastpat'
-Bundle 'tpope/vim-abolish'
-Bundle 'mattboehm/vim-unstack'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'bitc/vim-hdevtools'
-Bundle 'Twinside/vim-haskellFold'
-Bundle 'tomasr/molokai'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'idanarye/vim-vebugger'
-Bundle 'chrisbra/Recover.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'jayflo/vim-skip'
+NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'sjl/gundo.vim.git'
+NeoBundle 'vim-scripts/ShowMarks'
+NeoBundle 'vim-scripts/TaskList.vim'
+NeoBundle 'klen/python-mode'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-characterize'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'adimit/prolog.vim'
+NeoBundle 'wannesm/wmgraphviz.vim'
+NeoBundle 'nelstrom/vim-visual-star-search'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-lastpat'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'mattboehm/vim-unstack'
+NeoBundle 'michaeljsmith/vim-indent-object'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'bitc/vim-hdevtools'
+NeoBundle 'Twinside/vim-haskellFold'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundle 'idanarye/vim-vebugger'
+NeoBundle 'chrisbra/Recover.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'jayflo/vim-skip'
 
-" Set colorscheme
-if has("gui_running")
-    colorscheme molokai
-else
-    colorscheme relaxedgreen
-endif
+" Finalize
+call neobundle#end()
+NeoBundleCheck
 
-filetype plugin indent on	"Enable filetype detection
+" Enable built-in plugins
+filetype indent on
 syntax on
-runtime macros/matchit.vim  "Enable built-in matchit plugin
-" ===============  End Vundle Initialization  ===============
-
+runtime macros/matchit.vim
+" =============== End NeoBundle Initialization ================
 
 "  2 moving around (searching & patterns)
 set incsearch			    "Show matches for partially typed searches
@@ -145,6 +159,13 @@ set wildignorecase
 silent !mkdir ~/.vim/undo > /dev/null 2>&1
 set undodir=~/.vim/undo		"Persistent undo
 set undofile
+
+" Set colorscheme
+if has("gui_running")
+    colorscheme molokai
+else
+    colorscheme relaxedgreen
+endif
 
 " Set font, accounting for DPI. Desktop has 86, laptop has 96
 if system("xdpyinfo | perl -ne '/resolution.*x([0-9]+)/ && print $1;'") < 90
