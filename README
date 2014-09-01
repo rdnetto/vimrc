@@ -42,7 +42,6 @@ VIM-UNIMPAIRED
 ]b              Next buffer (:bn, <C-Tab>).
 ]t              Next tag (:tn)
 ]n              Next git merge conflict marker. Use :diffget to select hunks.
-]h              Next git hunk (vim-gitgutter)
 
 ]<Space>        Add (COUNT) blank lines below the cursor. Use [ for above.
 ]e              Move the current line (count) lines down. Use [ for above.
@@ -55,6 +54,11 @@ yi/ya/yo...     Prefix any insert-mode entering command with y to enter paste mo
 [x              XML encode. Prefix with count or append motion. ] decodes.
 [u              URL encode.
 [y              C string encode/escape.
+
+VIM-GITGUTTER
+]h              Next git hunk
+\gg             Toggle Git gutter signs (may require buffer to be reopened)
+\ga / \gr / \gp Stage (add) / Reset (remove) / Preview the current hunk to/fromt the index.
 
 MULTIPLE CURSORS
 <C-n>           Select current word, and go to next instance of word (*)
@@ -93,7 +97,6 @@ DEBUGGING (see :help vebugger-keymaps)
 \dx \dX         Execute the current line / an arbitrary expression.
 
 :<RANGE>Subvert/foo/bar/g       Swap foo and bar. Can use f{o,a}r to handle for+far at once. (vim-abolish)
-:GitGutterLineHighlightsToggle  Highlights lines that are marked by git gutter
 :Ack/:LAck                      Runs ack, puts results in quickfix/location window
 :Remove, :Move, :Chmod          Affect the file in the current buffer, updating the buffer to match.
 :Find                           Runs find, loads results into quickfix list

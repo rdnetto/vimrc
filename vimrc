@@ -233,6 +233,14 @@ let g:unstack_populate_quickfix = 1
 
 " Vim-gitgutter settings
 let g:gitgutter_realtime = 0
+let g:gitgutter_map_keys = 0
+let g:gitgutter_signs = 0
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+nmap <leader>gg :GitGutterSignsToggle<CR>
+nmap <Leader>ga <Plug>GitGutterStageHunk
+nmap <Leader>gr <Plug>GitGutterRevertHunk
+nmap <Leader>gp <Plug>GitGutterPreviewHunk
 
 " Haskell mode settings
 let g:haddock_browser = "xdg-open"
