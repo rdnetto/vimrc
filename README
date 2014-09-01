@@ -57,6 +57,7 @@ yi/ya/yo...     Prefix any insert-mode entering command with y to enter paste mo
 
 VIM-GITGUTTER
 ]h              Next git hunk
+\h / \j         Show heatmap of git-blame ages (smeargle)
 \gg             Toggle Git gutter signs (may require buffer to be reopened)
 \ga / \gr / \gp Stage (add) / Reset (remove) / Preview the current hunk to/fromt the index.
 

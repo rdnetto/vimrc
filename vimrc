@@ -78,6 +78,11 @@ NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jayflo/vim-skip'
 
+" vim-qt doesn't have ruby by default, and the plugin doesn't handle it well
+if has('ruby')
+    NeoBundle 'FriedSock/smeargle'
+endif
+
 " Finalize
 call neobundle#end()
 NeoBundleCheck
@@ -241,6 +246,9 @@ nmap <leader>gg :GitGutterSignsToggle<CR>
 nmap <Leader>ga <Plug>GitGutterStageHunk
 nmap <Leader>gr <Plug>GitGutterRevertHunk
 nmap <Leader>gp <Plug>GitGutterPreviewHunk
+
+" Smeargle settings
+let g:smeargle_colouring_scheme = ''
 
 " Haskell mode settings
 let g:haddock_browser = "xdg-open"
