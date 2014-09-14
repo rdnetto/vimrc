@@ -128,7 +128,7 @@ set mousemodel=popup_setpos "Enable context menu (right-click) in GUI
 
 " 11 messages and info
 set showcmd
-set nosmd                   "Don't show mode, as Powerline makes it redundant 
+set nosmd                   "Don't show mode, as Powerline makes it redundant
 set ruler		    	    "Line/Col numbers in corner
 
 " 13 editing text
@@ -297,7 +297,7 @@ nnoremap <c-s-tab> :bp<cr>
 " Easy-align mapping
 vnoremap <silent> <Leader><Space> :EasyAlign<Space>
 
-" Arrow key mappings. 
+" Arrow key mappings.
 nnoremap <Up>   gk
 nnoremap <Down> gj
 inoremap <buffer> <silent> <Up>   <C-o>gk
