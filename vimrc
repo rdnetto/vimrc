@@ -37,7 +37,7 @@ NeoBundle 'Relaxed-Green'
 NeoBundle 'restore_view.vim'
 
 " This requires the exuberant-ctags package
-NeoBundle 'taglist.vim'
+NeoBundle 'majutsushi/tagbar'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-pyref'
 NeoBundle 'xolox/vim-easytags'
@@ -202,15 +202,11 @@ let g:ctrlp_mruf_exclude = '/var/tmp/.*XX.*'
 let g:NERDTreeMouseMode = 3
 let g:NERDTreeQuitOnOpen = 1
 
-" TagList settings
-let g:Tlist_Close_On_Select = 1
-let g:Tlist_Exit_OnlyWindow = 1
-let g:Tlist_GainFocus_On_ToggleOpen = 1
-let g:Tlist_Show_Menu = 1
-let g:Tlist_Use_Right_Window = 1
-let g:Tlist_Use_SingleClick = 1
-let g:Tlist_WinWidth = 50
-let Tlist_File_Fold_Auto_Close = 1
+" Tagbar settings
+let g:tagbar_sort = 0
+let g:tagbar_show_linenumbers = -1
+let g:tagbar_singleclick = 1
+let g:tagbar_autoshowtag = 1
 
 " TaskList
 let g:tlWindowPosition = 1                  " Open TaskList on the bottom of the screen
@@ -336,7 +332,7 @@ nnoremap <silent> <F6> :ccl<CR>
 nnoremap <silent> <F8> :wa<CR>:make<CR>
 nnoremap <silent> <S-F8> :w<CR>:make<CR>
 map <F9> <Plug>TaskList
-nnoremap <silent> <F10> :TlistToggle<CR>:set cursorline<CR>
+nnoremap <silent> <F10> :TagbarOpenAutoClose<CR>
 
 " Use Enter or <C-L> to clear highlighting
 nnoremap <CR> :let @/=""<CR><CR>
