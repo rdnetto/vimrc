@@ -102,4 +102,5 @@ DEBUGGING (see :help vebugger-keymaps)
 :Remove, :Move, :Chmod          Affect the file in the current buffer, updating the buffer to match.
 :Find                           Runs find, loads results into quickfix list
 :GraphvizInteractive            Auto-updating view for graphs
+:SSave / :SLoad / :SDelete      Session management (built-in to Startify, auto-updating)
 

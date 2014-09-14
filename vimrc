@@ -77,6 +77,7 @@ NeoBundle 'idanarye/vim-vebugger'
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jayflo/vim-skip'
+NeoBundle 'mhinz/vim-startify'
 
 " vim-qt doesn't have ruby by default, and the plugin doesn't handle it well
 if has('ruby')
@@ -266,6 +267,17 @@ let g:EclimCompletionMethod = 'omnifunc'
 let g:vimskip_mapforwardskip = '<Leader>s'
 let g:vimskip_mapbackwardskip = '<Leader>S'
 let g:vimskip_maptocenter = '<Leader>gs'
+
+" Vim-Startify settings
+let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
+let g:startify_session_persistence = 1
+let g:startify_empty_buffer_key = 'n'
+let g:startify_relative_path = 1
+let g:startify_list_order = [
+        \ ['   Most Recently Used Files:'], 'files',
+        \ ['   MRU Files in ' . getcwd() . ':'], 'dir',
+        \ ['   Sessions:'], 'sessions',
+        \ ['   Bookmarks:'], 'bookmarks']
 
 " Relative line numbers in Normal mode only
 :set relativenumber
