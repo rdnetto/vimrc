@@ -46,7 +46,7 @@ NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'vim-scripts/TaskList.vim'
@@ -187,6 +187,11 @@ let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303,E128,E124,W391,E
 let g:pymode_lint_mccabe_complexity = 25
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
+
+" Airline settings
+let g:airline_theme = 'powerlineish'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " CtrlP settings
 let g:ctrlp_working_path_mode = 'rc'
