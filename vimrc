@@ -197,6 +197,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_mruf_max = 1000
 let g:ctrlp_mruf_exclude = '/var/tmp/.*XX.*'
+let g:ctrlp_reuse_window = 'startify'
 
 " NERDTree settings
 let g:NERDTreeMouseMode = 3
@@ -279,6 +280,7 @@ let g:startify_list_order = [
         \ ['   MRU Files in ' . getcwd() . ':'], 'dir',
         \ ['   Sessions:'], 'sessions',
         \ ['   Bookmarks:'], 'bookmarks']
+autocmd User Startified call AirlineRefresh
 
 " Relative line numbers in Normal mode only
 :set relativenumber
