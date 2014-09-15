@@ -67,6 +67,7 @@ MULTIPLE CURSORS
 <C-x>           Deselect current word and go to next word
 
 PYTHON SPECIFIC - PYMODE/ROPE
+K               View documentation for function in scratch window (pyref)
 <C-Space>       Autocomplete (code aware)
 <C-C>g          Go to definition
 <C-C>d          Show documentation in panel
