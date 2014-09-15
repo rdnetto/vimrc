@@ -1,10 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 set -e
+
+if [[ -z "$1" || "$1" != "light" && "$1" != "full" ]]; then
+    echo "USAGE: ./install.sh [light|full]"
+    echo "Installs NeoBundle and selects the plug-in profile to use."
+    exit 1
+fi
+
+echo "$1" > ~/.vim/profile
 
 #Need to manually install the package manager, so it can pull everything else in
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # YCM is too big to be installed automatically (download times out)
-git clone --recursive https://github.com/Valloric/YouCompleteMe.git "~/.vim/bundle/YouCompleteMe" 
-~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang
+if [[ "$1" == "full" ]]; then
+    git clone --recursive https://github.com/Valloric/YouCompleteMe.git "~/.vim/bundle/YouCompleteMe"
+    ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang
+fi
 
