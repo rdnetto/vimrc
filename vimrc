@@ -290,13 +290,6 @@ autocmd InsertLeave * :set relativenumber
 " Fix Y so that is behaves like D
 map Y y$
 
-" Force Markdown for *.md, since I'm never going to work with Modula-2 files
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Remap F8 for Java files to call eclim
-autocmd BufNewFile,BufReadPost *.java nnoremap <silent> <F8> :wa<CR>:Java<CR>
-autocmd BufNewFile,BufReadPost *.java nnoremap <silent> <S-F8> :w<CR>:Java<CR>
-
 " Remap home button to act like ^ instead of 0
 " NOTE: make sure that you have no trailing spaces, as they affect mappings
 nmap <Home> ^
