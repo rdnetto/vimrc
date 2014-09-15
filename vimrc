@@ -299,8 +299,8 @@ imap <Home> <Esc>^i
 imap <C-BS> <C-W>
 
 " Use Ctrl+Tab / Ctrl+Shift+Tab to cycle through buffers
-nnoremap <c-tab> :bn<cr>
-nnoremap <c-s-tab> :bp<cr>
+nnoremap <silent> <c-tab> :bn<cr>
+nnoremap <silent><c-s-tab> :bp<cr>
 
 " Easy-align mapping
 vnoremap <silent> <Leader><Space> :EasyAlign<Space>
@@ -308,8 +308,8 @@ vnoremap <silent> <Leader><Space> :EasyAlign<Space>
 " Arrow key mappings.
 nnoremap <Up>   gk
 nnoremap <Down> gj
-inoremap <buffer> <silent> <Up>   <C-o>gk
-inoremap <buffer> <silent> <Down> <C-o>gj
+inoremap <silent> <Up>   <C-o>gk
+inoremap <silent> <Down> <C-o>gj
 
 " Clipboard mappings
 vnoremap <C-X> "+x
@@ -326,12 +326,12 @@ nnoremap <silent> <S-F4> :bd!<CR>
 nnoremap <silent> <F6> :ccl<CR>
 nnoremap <silent> <F8> :wa<CR>:make<CR>
 nnoremap <silent> <S-F8> :w<CR>:make<CR>
-map <F9> <Plug>TaskList
+nnoremap <silent> <F9> <Plug>TaskList
 nnoremap <silent> <F10> :TagbarOpenAutoClose<CR>
 
 " Use Enter or <C-L> to clear highlighting
-nnoremap <CR> :let @/=""<CR><CR>
-nnoremap <C-L> :let @/=""<CR><C-L>
+nnoremap <silent> <CR> :let @/=""<CR><CR>
+nnoremap <silent> <C-L> :let @/=""<CR><C-L>
 
 " Use Space to toggle folds
 nnoremap <silent> <Space> za
