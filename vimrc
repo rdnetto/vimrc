@@ -297,12 +297,28 @@ let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
 let g:startify_session_persistence = 1
 let g:startify_empty_buffer_key = 'n'
 let g:startify_relative_path = 1
-let g:startify_list_order = [
-        \ ['   Most Recently Used Files:'], 'files',
-        \ ['   MRU Files in ' . getcwd() . ':'], 'dir',
-        \ ['   Sessions:'], 'sessions',
-        \ ['   Bookmarks:'], 'bookmarks']
+let g:startify_files_number = 20
 autocmd User Startified call AirlineRefresh
+autocmd BufEnter * call UpdateStartify()
+
+function UpdateStartify()
+    if getcwd() == $HOME
+        let g:startify_list_order = [
+                \ ['   Most Recently Used Files:'], 'files',
+                \ ['   Sessions:'], 'sessions',
+                \ ['   Bookmarks:'], 'bookmarks']
+    else
+        let l:dir = substitute(getcwd(), '^' . $HOME, '~', '')
+        let g:startify_list_order = [
+                \ ['   Most Recently Used Files:'], 'files',
+                \ ['   MRU Files in ' . l:dir . ':'], 'dir',
+                \ ['   Sessions:'], 'sessions',
+                \ ['   Bookmarks:'], 'bookmarks']
+    endif
+endfunction
+
+" Legacy code to handle old versions of Startify correctly
+call UpdateStartify()
 
 " Relative line numbers in Normal mode only
 :set relativenumber
