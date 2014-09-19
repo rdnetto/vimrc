@@ -216,6 +216,7 @@ let g:pymode_rope_complete_on_dot = 0
 let g:airline_theme = 'powerlineish'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+nmap <Leader>atw :AirlineToggleWhitespace<CR>
 
 " CtrlP settings
 let g:ctrlp_working_path_mode = 'rc'
