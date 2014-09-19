@@ -68,6 +68,7 @@ NeoBundle 'restore_view.vim'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'airblade/vim-rooter'
 
 if s:profile  ==? "full"
     " Tag support (requires exuberant-ctags)
@@ -319,6 +320,10 @@ endfunction
 
 " Legacy code to handle old versions of Startify correctly
 call UpdateStartify()
+
+" Mappings for vim-Rooter
+map <silent> <unique> <Leader>cd <Plug>RooterChangeToRootDirectory
+autocmd BufEnter *.* :Rooter
 
 " Relative line numbers in Normal mode only
 :set relativenumber
