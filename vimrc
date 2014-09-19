@@ -43,6 +43,7 @@ NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'vim-scripts/TaskList.vim'
+NeoBundle 'bogado/file-line'
 
 " Movement
 NeoBundle 'Lokaltog/vim-easymotion'
