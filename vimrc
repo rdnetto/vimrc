@@ -326,6 +326,7 @@ call UpdateStartify()
 " Mappings for vim-Rooter
 map <silent> <unique> <Leader>cd <Plug>RooterChangeToRootDirectory
 autocmd BufEnter *.* :Rooter
+let g:rooter_patterns = ['Makefile', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']
 
 " Relative line numbers in Normal mode only
 :set relativenumber
