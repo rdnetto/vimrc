@@ -44,6 +44,7 @@ NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'vim-scripts/TaskList.vim'
 NeoBundle 'bogado/file-line'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " Movement
 NeoBundle 'Lokaltog/vim-easymotion'
