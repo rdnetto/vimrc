@@ -1,26 +1,35 @@
 " This is a Vimscript used for printing files with syntax colouring
 
-"  1 important
-version 6.0
-set nocompatible
+" =============== Begin NeoBundle Initialization ===============
+" Initialize
+if has ('vim_starting')
+    set nocompatible
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" =============== Begin Vundle Initialization ===============
-filetype off                "This needs to be disabled for this section
+call neobundle#begin(expand('~/.vim/bundle/'))
+let g:neobundle#install_max_processes = 8
+let g:neobundle#install_process_timeout = 500
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" NeoBundle dependencies
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-" vim-scripts on github is assumed
-Bundle 'Relaxed-Green'
-Bundle 'tomasr/molokai'
+" Colour schemes
+NeoBundle 'Relaxed-Green'
+NeoBundle 'tomasr/molokai'
+
+" Finalize
+call neobundle#end()
+NeoBundleCheck
+
+" Enable built-in plugins
+filetype plugin indent on
+syntax on
+runtime plugin/tohtml.vim
+" =============== End NeoBundle Initialization ================
 
 " Set colorscheme
 colorscheme relaxedgreen
-
-filetype plugin indent on	"Enable filetype detection
-syntax on
-runtime plugin/tohtml.vim
-" ===============  End Vundle Initialization  ===============
 
 " Settings needed to preserve formatting
 set wrap
