@@ -61,7 +61,7 @@ VIM-GITGUTTER
 \h / \j         Show heatmap of git-blame ages (smeargle)
 \gg             Toggle Git gutter signs (may require buffer to be reopened)
 \ga / \gr / \gp Stage (add) / Reset (remove) / Preview the current hunk to/fromt the index.
-\cd             Change to repository root directory (vim-rooter)
+\cd             Switch between file and project root directories. (vim-rooter)
 \atw            Toggle airline inconsistent whitespace detection.
 
 MULTIPLE CURSORS

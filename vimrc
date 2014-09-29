@@ -123,7 +123,6 @@ runtime macros/matchit.vim
 set incsearch			    "Show matches for partially typed searches
 set ignorecase	    		"Searches are case insensitive...
 set smartcase	    		"unless they have uppercase letters
-set autochdir               "Set working directory to path of current file
 
 "  3 tags
 set tagrelative
@@ -325,9 +324,21 @@ endfunction
 call UpdateStartify()
 
 " Mappings for vim-Rooter
-map <silent> <unique> <Leader>cd <Plug>RooterChangeToRootDirectory
-autocmd BufEnter *.* :Rooter
+map <silent> <unique> <Leader>cd :call ToggleWD()<CR>
 let g:rooter_patterns = ['Makefile', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']
+let g:rooter_use_lcd = 1
+let g:rooter_disable_mapping = 1
+
+autocmd BufAdd * silent! lcd %<afile>:h
+autocmd BufFilePost,BufReadPost * silent! lcd %:p:h
+
+function ToggleWD()
+    if expand('%') =~ "/"
+		lcd %:p:h
+    else
+		Rooter
+    endif
+endfunction
 
 " Relative line numbers in Normal mode only
 :set relativenumber
