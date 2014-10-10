@@ -104,6 +104,7 @@ if s:profile  ==? "full"
     NeoBundle 'wannesm/wmgraphviz.vim'
     NeoBundle 'eagletmt/ghcmod-vim'
     NeoBundle 'bitc/vim-hdevtools'
+    NeoBundle 'eagletmt/neco-ghc'
     NeoBundle 'Twinside/vim-haskellFold'
     NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 
@@ -256,6 +257,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 " WM Graphviz settings
 let g:WMGraphviz_output = "png"
@@ -289,6 +291,9 @@ let g:LatexBox_Folding = 1
 
 " Eclim setting - needed for YCM
 let g:EclimCompletionMethod = 'omnifunc'
+
+" Neco-ghc settings
+let g:necoghc_enable_detailed_browse = 1
 
 " Vim-skip settings
 let g:vimskip_mapforwardskip = '<Leader>s'
