@@ -79,10 +79,10 @@ K               View documentation for function in scratch window (pyref)
 iM              text object: inside method
 iC              text object: inside class
 
-LATEX SPECIFIC - LATEX-BOX
-\ll             Compile
-\lv             View PDF
-\lt             Open table of contents
+LATEX SPECIFIC - LATEX-BOX, ATP-VIM. See http://atp-vim.sourceforge.net/atp_quickref.pdf
+F5             View PDF
+F8             Compile
+F10            Open table of contents
 
 ]s              Next misspelled word
 zg              Add word to spellfile

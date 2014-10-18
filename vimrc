@@ -288,6 +288,7 @@ let g:hdevtools_options = '-g -hide-package=monads-tf -g -fglasgow-exts'
 
 " Latex-Box settings
 let g:LatexBox_Folding = 1
+let g:no_atp_maps = 1
 
 " Eclim setting - needed for YCM
 let g:EclimCompletionMethod = 'omnifunc'

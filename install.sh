@@ -16,5 +16,7 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 if [[ "$1" == "full" ]]; then
     git clone --recursive https://github.com/Valloric/YouCompleteMe.git "~/.vim/bundle/YouCompleteMe"
     ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang
+
+    echo "Please install app-vim/automatictexplugin for full LaTeX support."
 fi
 
