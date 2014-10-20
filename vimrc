@@ -390,7 +390,7 @@ nnoremap <silent> <S-F4> :bd!<CR>
 nnoremap <silent> <F6> :ccl<CR>
 nnoremap <silent> <F8> :wa<CR>:make<CR>
 nnoremap <silent> <S-F8> :w<CR>:make<CR>
-nnoremap <silent> <F9> <Plug>TaskList
+nmap     <silent> <F9> <Plug>TaskList
 nnoremap <silent> <F10> :TagbarOpenAutoClose<CR>
 
 " Use Enter or <C-L> to clear highlighting
