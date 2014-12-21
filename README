@@ -9,6 +9,8 @@ F8-S            Write current buffer and Make
 F9              TaskList: view TODOs, etc. in current file
 F10             Tag list - code structure
 
+gf              Open filename under cursor
+gq<MOTION>      Format lines. Like = for comments. e.g. enforce text width, move words between lines, etc.
 \*              Recursive grep for symbol under cursor. (TODO: remap to use ack, remove vim-visual-star)
 \cu             Nerd Commenter - Uncomments the current line
 \<Space>[N] X   Easy Align [V mode] - aligns selection about the Nth 'X'. (N is optional)
@@ -17,13 +19,17 @@ mX              Set mark X to cursor position
 `X              Go to mark X (as indicated in gutter)
 ^W<ARROW>       Go to window in <DIR>
 ^Wq             Close current window
-^T/^D           [I mode]: (un)indent the current line
+^T / ^D         [I mode]: (un)indent the current line
+^W / ^U         [I mode]: delete the last word/line
+^Y / ^E         [I mode]: insert the character in the same column, above/below line
 zf/zc/zo/za     Create/close/open/toggle a fold
 zm/zr           Close/open a level of folds. (more/reduce folding)
 ai/ii           Text object for block of indented code, optionally including the previous unindented line. Cursor must be inside indented block.
 \s / \S         Skip to point half-way between cursor and end/start of line (vim-skip)
 \gs             Go to midpoint of line (vim-skip)
 \ig             Show indentation guides
+[i / [I         Show the definition of / all references to the identifier under the cursor. (Useful for checking types)
+gd / gD         Go to the definition of the current identifier in the current file / function.
 
 SURROUND.VIM
 ys<MOTION>]     Surround MOTION with ] brackets (use left bracket to add spaces). Supports XML tags as well.
@@ -101,10 +107,11 @@ DEBUGGING (see :help vebugger-keymaps)
 \dE             Evaluate an arbitrary expression
 \dx \dX         Execute the current line / an arbitrary expression.
 
+:abbreviate                     Adds insert-mode aliases for longer words. Useful for misspellings.
 :<RANGE>Subvert/foo/bar/g       Swap foo and bar. Can use f{o,a}r to handle for+far at once. (vim-abolish)
 :Ack/:LAck                      Runs ack, puts results in quickfix/location window
 :Remove, :Move, :Chmod          Affect the file in the current buffer, updating the buffer to match.
 :Find                           Runs find, loads results into quickfix list
 :GraphvizInteractive            Auto-updating view for graphs
 :SSave / :SLoad / :SDelete      Session management (built-in to Startify, auto-updating)
-
+^K / :digraphs                  Insert non-ASCII characters
