@@ -244,6 +244,7 @@ let g:tlTokenList = ['WIP', 'BUG', 'TODO']
 " Easytags settings - requires hasktags package for Haskell support
 let g:easytags_file = '$HOME/.vim/tags'
 let g:easytags_dynamic_files = 2
+let g:easytags_auto_update = 1
 let g:easytags_languages = {
 \   'haskell': {
 \     'cmd': "/usr/bin/hasktags",
@@ -253,6 +254,26 @@ let g:easytags_languages = {
 \       'recurse_flag': ''
 \   }
 \}
+autocmd BufRead * call ToggleEasytags()
+
+function ToggleEasytags()
+    " Automatically disable the plugin if our tags file is too big
+    let l:tagsfile = findfile('tags', expand('<afile>:p:h') . ';')
+    if empty(l:tagsfile)
+        let l:tagsfile = expand("$HOME/.vim/tags")
+    endif
+
+    if(empty(l:tagsfile))
+        echomsg 'Couldnt find tags file'
+        return
+    endif
+
+    let l:size = system('stat -c %s ' . l:tagsfile)
+    if l:size > 1000000 && g:easytags_auto_update
+        let g:easytags_auto_update = 0
+        echomsg "Large tags file detected - disabling auto-updates"
+    endif
+endfunction
 
 " YouCompleteMe settings
 let g:ycm_complete_in_comments = 1
