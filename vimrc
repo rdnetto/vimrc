@@ -129,7 +129,7 @@ set smartcase	    		"unless they have uppercase letters
 
 "  3 tags
 set tagrelative
-set tags=$HOME/.vim/tags
+set tags=tags,$HOME/.vim/tags
 
 "  4 displaying text
 set wrap
@@ -242,6 +242,7 @@ let g:tlWindowPosition = 1                  " Open TaskList on the bottom of the
 let g:tlTokenList = ['WIP', 'BUG', 'TODO']
 
 " Easytags settings - requires hasktags package for Haskell support
+let g:easytags_file = '$HOME/.vim/tags'
 let g:easytags_dynamic_files = 2
 let g:easytags_languages = {
 \   'haskell': {
