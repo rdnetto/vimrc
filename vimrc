@@ -403,7 +403,8 @@ nnoremap <silent> <c-tab> :bn<cr>
 nnoremap <silent><c-s-tab> :bp<cr>
 
 " Easy-align mapping
-vnoremap <silent> <Leader><Space> :EasyAlign<Space>
+nmap <Leader><Space> <Plug>(EasyAlign)
+vmap <Leader><Space> <Plug>(EasyAlign)
 
 " Arrow key mappings.
 nnoremap <Up>   gk
