@@ -175,6 +175,9 @@ set shiftwidth=4	    	"Use tabstop value for indenting
 set foldmethod=syntax		"Use syntax-dependent folding
 set nofoldenable        	"Don't fold by default
 
+" 17 key mapping
+set ttimeoutlen=0
+
 " 18 reading and writing files
 set autoread			    "Read files when modified
 
