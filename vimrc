@@ -108,7 +108,6 @@ if s:profile  ==? "full"
     NeoBundle 'eagletmt/neco-ghc'
     NeoBundle 'Twinside/vim-haskellFold'
     NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
-    NeoBundle 'vivien/vim-addon-linux-coding-style'
 
 endif
 
