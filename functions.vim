@@ -57,3 +57,14 @@ function ToggleEasytags()
     endif
 endfunction
 
+" Function for jumping back and forth between source and header files
+function! GotoHeader()
+    if(expand("%:e") == "c")
+        execute ":edit " . expand("%:r") . ".h"
+    elseif(expand("%:e") == "h")
+        execute ":edit " . expand("%:r") . ".c*"
+    else
+        echoerr "ERROR: Unknown filetype"
+    endif
+endfunction
+
