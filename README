@@ -10,6 +10,7 @@ F8-S            Write current buffer and Make
 F9              TaskList: view TODOs, etc. in current file
 F10             Tag list - code structure
 
+gv              Re-select last visual selection
 gf              Open filename under cursor
 gq<MOTION>      Format lines. Like = for comments. e.g. enforce text width, move words between lines, etc.
 \*              Recursive grep for symbol under cursor. (TODO: remap to use ack, remove vim-visual-star)
