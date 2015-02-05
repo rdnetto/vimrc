@@ -78,5 +78,6 @@ if g:profile  ==? "full"
     NeoBundle 'eagletmt/neco-ghc'
     NeoBundle 'Twinside/vim-haskellFold'
     NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+    NeoBundle 'trapd00r/irc.vim'
 endif
 
