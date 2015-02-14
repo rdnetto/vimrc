@@ -96,6 +96,8 @@ let g:vimskip_maptocenter = '<Leader>gs'
 " Vim-Startify
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
 let g:startify_session_persistence = 1
+let g:startify_session_delete_buffers = 1
+let g:startify_change_to_vcs_root = 1
 let g:startify_empty_buffer_key = 'n'
 let g:startify_relative_path = 1
 let g:startify_files_number = 20
