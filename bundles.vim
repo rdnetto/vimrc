@@ -58,13 +58,6 @@ if g:profile  ==? "full"
         NeoBundle 'FriedSock/smeargle'
     endif
 
-    " Omnicomplete
-    NeoBundle 'Valloric/YouCompleteMe', {
-                \ 'build' : {
-                \     'unix' : './install.sh --clang-completer --system-libclang',
-                \    },
-                \ }
-
     " Debugging
     NeoBundle 'mattboehm/vim-unstack'
     NeoBundle 'idanarye/vim-vebugger'
@@ -79,5 +72,14 @@ if g:profile  ==? "full"
     NeoBundle 'Twinside/vim-haskellFold'
     NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
     NeoBundle 'trapd00r/irc.vim'
+
+    " Omnicomplete - use lazy loading since it adds ~800ms to startup
+    NeoBundleLazy 'Valloric/YouCompleteMe', {
+                    \ 'build' : {
+                    \     'unix' : './install.sh --clang-completer --system-libclang',
+                    \    },
+                    \ 'augroup' : 'youcompletemeStart'
+                    \ }
+    autocmd FileType c,cpp,cs,python,haskell NeoBundleSource YouCompleteMe
 endif
 
