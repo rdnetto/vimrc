@@ -68,3 +68,21 @@ function! GotoHeader()
     endif
 endfunction
 
+" Function for connecting to kgdb (using helper script to get symbol table info)
+function! KgdbConnect()
+    let l:lines = systemlist("../debug.sh")
+
+    if(len(l:lines) == 1)
+        echoerr l:lines[0]
+        return
+    endif
+
+    let l:debugger = vebugger#gdb#connectRemote("vmlinux", lines[0])
+    call vebugger#toggleTerminalBuffer()
+    echom "Connected to " . lines[0]
+
+    for line in l:lines[1:]
+        call vebugger#writeLine(line)
+    endfor
+endfunction
+
