@@ -7,7 +7,10 @@ if [[ -z "$1" || "$1" != "light" && "$1" != "full" ]]; then
     exit 1
 fi
 
+cd ~
 echo "$1" > ~/.vim/profile
+ln -s .vim .nvim
+cd - >/dev/null
 
 #Need to manually install the package manager, so it can pull everything else in
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
