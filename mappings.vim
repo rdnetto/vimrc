@@ -70,6 +70,9 @@ vmap <Leader><Space> <Plug>(EasyAlign)
 " Mapping to toggle whitespace warnings
 nmap <Leader>atw :AirlineToggleWhitespace<CR>
 
+" Hack to work around plugins which break airline
+nmap <silent> <Leader>ar :AirlineRefresh<CR>
+
 " Mapping for toggling working directory (wrapper for Vim-Rooter)
 map <silent> <unique> <Leader>cd :call ToggleWD()<CR>
 
