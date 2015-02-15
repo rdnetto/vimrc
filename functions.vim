@@ -77,7 +77,7 @@ function! KgdbConnect()
         return
     endif
 
-    let l:debugger = vebugger#gdb#connectRemote("vmlinux", lines[0])
+    let l:debugger = vebugger#gdb#start("vmlinux", {'con' : lines[0]})
     call vebugger#toggleTerminalBuffer()
     echom "Connected to " . lines[0]
 
