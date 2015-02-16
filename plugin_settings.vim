@@ -70,7 +70,7 @@ let g:tlTokenList = ['WIP', 'BUG', 'TODO']
 " Vebugger - enable keymaps
 " TODO: add keymap/function for autostarting debugger
 let g:vebugger_leader='<Leader>d'
-let g:vebugger_edit_cmd='edit'
+let g:vebugger_view_source_cmd='edit'
 
 " Vim-gitgutter
 let g:gitgutter_realtime = 0
