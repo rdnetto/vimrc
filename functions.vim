@@ -59,7 +59,7 @@ endfunction
 
 " Function for jumping back and forth between source and header files
 function! GotoHeader()
-    if(expand("%:e") == "c")
+    if(expand("%:e") == "c" || expand("%:e") == "cpp")
         execute ":edit " . expand("%:r") . ".h"
     elseif(expand("%:e") == "h")
         execute ":edit " . expand("%:r") . ".c*"
