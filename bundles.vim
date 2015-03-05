@@ -74,6 +74,7 @@ if g:profile  ==? "full"
     NeoBundle 'trapd00r/irc.vim'
 
     " Omnicomplete - use lazy loading since it adds ~800ms to startup
+    NeoBundle 'rdnetto/YCM-Generator'
     NeoBundleLazy 'Valloric/YouCompleteMe', {
                     \ 'build' : {
                     \     'unix' : './install.sh --clang-completer --system-libclang',
