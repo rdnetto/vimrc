@@ -41,7 +41,7 @@ NeoBundle 'restore_view.vim'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mileszs/ack.vim'
-NeoBundle 'rdnetto/vim-rooter'
+NeoBundle 'airblade/vim-rooter'
 
 if g:profile  ==? "full"
     " Tag support (requires exuberant-ctags)
