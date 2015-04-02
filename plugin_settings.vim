@@ -49,7 +49,7 @@ let g:NERDTreeMouseMode = 3
 let g:NERDTreeQuitOnOpen = 1
 
 " PyMode
-let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303,E128,E124,W391,E203,C0301,E221,C901"
+let g:pymode_lint_ignore = "E501,E251,E262,E226,E261,W0401,E303,E128,E124,W391,E203,C0301,E221,C901,E731"
 let g:pymode_lint_mccabe_complexity = 25
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
