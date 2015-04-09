@@ -73,6 +73,15 @@ if g:profile  ==? "full"
     NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
     NeoBundle 'trapd00r/irc.vim'
 
+    if has('lua')
+        NeoBundle 'jeaye/color_coded', {
+                    \ 'build' : {
+                    \     'unix' : 'cmake -DCMAKE_C_COMPILER=gcc-4.9.2 -DCMAKE_CXX_COMPILER=g++-4.9.2 . && make -j6',
+                    \    },
+                    \ 'augroup' : 'youcompletemeStart'
+                    \ }
+    endif
+
     " Omnicomplete - use lazy loading since it adds ~800ms to startup
     NeoBundle 'rdnetto/YCM-Generator'
     NeoBundleLazy 'Valloric/YouCompleteMe', {
