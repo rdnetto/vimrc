@@ -1,10 +1,6 @@
 " Author:  Eric Van Dewoestine
 "
-" Description: {{{
-"   Common language functionality (validation, completion, etc.) abstracted
-"   into re-usable functions.
-"
-" License:
+" License: {{{
 "
 " Copyright (C) 2005 - 2014  Eric Van Dewoestine
 "
@@ -21,20 +17,6 @@
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 "
-" }}}
-
-" Global Varables {{{
-  if !exists('g:EclimTempFilesEnable')
-    let g:EclimTempFilesEnable = 1
-  endif
-
-  if !exists('g:EclimFileTypeValidate')
-    let g:EclimFileTypeValidate = 1
-  endif
-
-  if !exists('g:EclimRefactorDiffOrientation')
-    let g:EclimRefactorDiffOrientation = 'vertical'
-  endif
 " }}}
 
 " Script Variables {{{
@@ -135,14 +117,16 @@ function! eclim#lang#CodeComplete(command, findstart, base, ...) " {{{
   endif
 endfunction " }}}
 
-" Search(command, singleResultAction, argline) {{{
-" Executes a search.
-function! eclim#lang#Search(command, singleResultAction, argline)
+function! eclim#lang#Search(command, singleResultAction, argline) " {{{
   let argline = a:argline
   "if argline == ''
   "  call eclim#util#EchoError('You must supply a search pattern.')
   "  return
   "endif
+
+  " check for user supplied open action
+  let [action_args, argline] = eclim#util#ExtractCmdArgs(argline, '-a:')
+  let action = len(action_args) == 2 ? action_args[1] : a:singleResultAction
 
   " check if pattern supplied without -p.
   if argline !~ '^\s*-[a-z]' && argline !~ '^\s*$'
@@ -192,27 +176,7 @@ function! eclim#lang#Search(command, singleResultAction, argline)
   endif
 
   if !empty(results)
-    call eclim#util#SetLocationList(eclim#util#ParseLocationEntries(results))
-    let locs = getloclist(0)
-    " if only one result and it's for the current file, just jump to it.
-    " note: on windows the expand result must be escaped
-    if len(results) == 1 && locs[0].bufnr == bufnr('%')
-      if results[0].line != 1 && results[0].column != 1
-        lfirst
-      endif
-
-    " single result in another file.
-    elseif len(results) == 1 && a:singleResultAction != "lopen"
-      let entry = getloclist(0)[0]
-      call eclim#util#GoToBufferWindowOrOpen
-        \ (bufname(entry.bufnr), a:singleResultAction)
-      call eclim#util#SetLocationList(eclim#util#ParseLocationEntries(results))
-      call eclim#display#signs#Update()
-
-      call cursor(entry.lnum, entry.col)
-    else
-      exec 'lopen ' . g:EclimLocationListHeight
-    endif
+    call eclim#lang#SearchResults(results, action)
     return 1
   else
     if argline !~ '-p\>'
@@ -222,7 +186,40 @@ function! eclim#lang#Search(command, singleResultAction, argline)
       call eclim#util#EchoInfo("Pattern '" . searchedFor . "' not found.")
     endif
   endif
+endfunction " }}}
 
+function! eclim#lang#SearchResults(results, action) " {{{
+  " Function which handles processing search results.
+
+  silent let projectName = eclim#project#util#GetCurrentProjectName()
+
+  " single result
+  if len(a:results) == 1
+    let name = substitute(a:results[0].filename, '\', '/', 'g')
+    call eclim#util#GoToBufferWindowOrOpen(
+      \ name, a:action, a:results[0].line, a:results[0].column)
+    silent let curProjectName = eclim#project#util#GetCurrentProjectName()
+    if curProjectName == '' && projectName != ''
+      let b:eclim_project = projectName
+    endif
+
+  " more than one result
+  else
+    call eclim#util#SetQuickfixList(eclim#util#ParseLocationEntries(a:results))
+    if projectName != ''
+      " setbufvar seems to have the side affect of changing to the buffer's dir
+      " when autochdir is set.
+      let save_autochdir = &autochdir
+      set noautochdir
+
+      for item in getqflist()
+        call setbufvar(item.bufnr, 'eclim_project', projectName)
+      endfor
+
+      let &autochdir = save_autochdir
+    endif
+    exec g:EclimQuickFixOpen . ' ' . g:EclimQuickFixHeight
+  endif
 endfunction " }}}
 
 function! eclim#lang#IsFiletypeValidationEnabled(lang) " {{{
@@ -286,12 +283,15 @@ function! eclim#lang#UpdateSrcFile(lang, ...) " {{{
     endif
 
     let result = eclim#Execute(command)
-    if type(result) == g:LIST_TYPE && len(result) > 0
-      let errors = eclim#util#ParseLocationEntries(
-        \ result, g:EclimValidateSortResults)
-      call eclim#util#SetLocationList(errors)
-    else
-      call eclim#util#ClearLocationList('global')
+
+    if validate && !eclim#util#WillWrittenBufferClose()
+      if type(result) == g:LIST_TYPE && len(result) > 0
+        let errors = eclim#util#ParseLocationEntries(
+          \ result, g:EclimValidateSortResults)
+        call eclim#util#SetLocationList(errors)
+      else
+        call eclim#util#ClearLocationList('global')
+      endif
     endif
 
     call eclim#project#problems#ProblemsUpdate('save')
@@ -349,8 +349,8 @@ function! eclim#lang#SilentUpdate(...) " {{{
     try
       if a:0 && a:1 && g:EclimTempFilesEnable
         " don't create temp files if no server is available to clean them up.
-        let project = eclim#project#util#GetCurrentProjectName()
-        let workspace = eclim#project#util#GetProjectWorkspace(project)
+        let project = eclim#project#util#GetProject(expand('%:p'))
+        let workspace = len(project) > 0 ? project.workspace : ''
         if workspace != '' && eclim#PingEclim(0, workspace)
           let prefix = '__eclim_temp_'
           let file = fnamemodify(file, ':h') . '/' . prefix . fnamemodify(file, ':t')
@@ -595,7 +595,7 @@ endfunction " }}}
 " RefactorPrompt(prompt) {{{
 " Issues the standard prompt for language refactorings.
 function! eclim#lang#RefactorPrompt(prompt)
-  exec "echohl " . g:EclimInfoHighlight
+  exec "echohl " . g:EclimHighlightInfo
   try
     " clear any previous messages
     redraw

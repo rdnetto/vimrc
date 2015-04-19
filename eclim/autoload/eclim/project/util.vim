@@ -4,7 +4,7 @@
 "
 " License:
 "
-" Copyright (C) 2005 - 2013  Eric Van Dewoestine
+" Copyright (C) 2005 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -173,6 +173,22 @@ function! s:ProjectNatureHooks(natureIds, hookName, args) " {{{
   return 1
 endfunction " }}}
 
+function! eclim#project#util#ProjectImportDiscover(arg) " {{{
+  " Recursively searches the given directory for any project files
+  " and imports them.
+  let projects = split(globpath(a:arg, '**/.project'), '\n')
+  if (len(projects) == 0)
+    call eclim#util#Echo("No projects found")
+    return
+  endif
+
+  for project in projects
+    call eclim#project#util#ProjectImport(fnamemodify(project, ':h'))
+  endfor
+
+  call eclim#util#Echo("Imported " . len(projects) . " projects.")
+endfunction " }}}
+
 function! eclim#project#util#ProjectImport(arg) " {{{
   let folder = fnamemodify(expand(a:arg), ':p')
   let folder = substitute(folder, '\', '/', 'g')
@@ -206,7 +222,8 @@ function! eclim#project#util#ProjectImport(arg) " {{{
   if result != '0'
     let project = eclim#project#util#GetProject(folder)
     if !len(natureIds)
-      let natureIds = eclim#project#util#GetProjectNatureAliases(project)
+      let natureIds = eclim#project#util#GetProjectNatureAliases(
+        \ get(project, 'name', ''))
     endif
     call s:ProjectNatureHooks(natureIds, 'ProjectImportPost', [project])
     call eclim#util#Echo(result)
@@ -241,7 +258,7 @@ function! eclim#project#util#ProjectRename(args) " {{{
   else
     let response = eclim#util#PromptConfirm(
       \ printf("Rename project '%s' to '%s'", project, name),
-      \ g:EclimInfoHighlight)
+      \ g:EclimHighlightInfo)
   endif
 
   if response == 1
@@ -275,7 +292,7 @@ function! eclim#project#util#ProjectMove(args) " {{{
   else
     let response = eclim#util#PromptConfirm(
       \ printf("Move project '%s' to '%s'", project, dir),
-      \ g:EclimInfoHighlight)
+      \ g:EclimHighlightInfo)
   endif
 
   if response == 1
@@ -457,7 +474,9 @@ endfunction " }}}
 function! eclim#project#util#ProjectStatusLine() " {{{
   " Includes status information for the current file to VIM status
 
-  let project = eclim#project#util#GetProject(expand('%:p'))
+  " don't ever display errors since this is called from the user's status
+  " line.
+  silent! let project = eclim#project#util#GetProject(expand('%:p'))
   if !empty(project)
     let status = g:EclimProjectStatusLine
     while status =~ '\${\w\+}'
@@ -478,6 +497,7 @@ function! eclim#project#util#ProjectStatusLine() " {{{
     endwhile
     return status
   endif
+  return ''
 endfunction " }}}
 
 function! eclim#project#util#ProjectOpen(name) " {{{
@@ -633,6 +653,71 @@ function! eclim#project#util#ProjectNatureModify(command, args) " {{{
   endif
 endfunction " }}}
 
+function! eclim#project#util#ProjectRun(...) " {{{
+  " Option args:
+  "   config: The name of the configuration to run for the current project
+  
+  if !eclim#EclimAvailable()
+    return
+  endif
+
+  let config = a:0 > 0 ? a:1 : ''
+  if !eclim#project#util#IsCurrentFileInProject()
+    return
+  endif
+  let project = eclim#project#util#GetCurrentProjectName()
+
+  let command = s:command_project_run
+  if config != ''
+    let command = s:command_project_run_config
+  endif
+
+  call eclim#util#Echo("Running project '" . project . "'...")
+  let command = substitute(command, '<project>', project, '')
+  let command = substitute(command, '<config>', config, '')
+  let result = eclim#Execute(command, {'project': project})
+  call eclim#util#Echo(result)
+endfunction " }}}
+
+function! eclim#project#util#ProjectRunList() " {{{
+
+  if !eclim#EclimAvailable()
+    return
+  endif
+
+  if !eclim#project#util#IsCurrentFileInProject()
+    return
+  endif
+  let project = eclim#project#util#GetCurrentProjectName()
+
+  let command = s:command_project_run_list
+
+  call eclim#util#Echo("Fetching launch configs for project '" . project . "'...")
+  let command = substitute(command, '<project>', project, '')
+  let result = eclim#Execute(command, {'project': project})
+  if type(result) != g:LIST_TYPE
+    call eclim#util#Echo(result)
+    return
+  endif
+
+  if len(result) == 0
+    call eclim#util#Echo("No launch configs for project '" . project . ".")
+    return
+  endif
+
+  let pad = 0
+  for config in result
+    let pad = len(config.name) > pad ? len(config.name) : pad
+  endfor
+
+  let output = []
+  for config in result
+    call add(output,
+      \ eclim#util#Pad(config.name, pad) . ' - ' . config.type)
+  endfor
+  call eclim#util#Echo(join(output, "\n"))
+endfunction " }}}
+
 function! eclim#project#util#ProjectSettings(project) " {{{
   " Opens a window that can be used to edit a project's settings.
 
@@ -706,60 +791,6 @@ function! eclim#project#util#ProjectUpdate() " {{{
   else
     call eclim#util#ClearLocationList()
     call eclim#util#Echo(result)
-  endif
-endfunction " }}}
-
-function! eclim#project#util#ProjectGrep(command, args) " {{{
-  " Executes the supplied vim grep command with the specified pattern against
-  " one or more file patterns.
-
-  if !eclim#project#util#IsCurrentFileInProject()
-    return
-  endif
-
-  let project = eclim#project#util#GetProject(expand('%:p'))
-  let tail = substitute(a:args, '\(.\).\{-}\1\s\(.*\)', '\2', '')
-  let pattern = substitute(a:args, '\(.*\)\s\+\M' . tail . '\m$', '\1', '')
-  let cmd = a:command
-  let acd = &autochdir
-  set noautochdir
-  try
-    if pattern != a:args && tail != a:args && tail != ''
-      let files = eclim#util#ParseArgs(tail)
-      let paths = ''
-      for file in files
-        if paths != ''
-          let paths .= ' '
-        endif
-        let paths .= escape(project.path, ' ') . '/' . file
-      endfor
-      let links = get(project, 'links', {})
-      if len(links)
-        for link in values(links)
-          for file in files
-            let paths .= ' ' . escape(link, ' ') . '/' . file
-          endfor
-        endfor
-      endif
-      silent exec a:command . ' ' . pattern . ' ' . paths
-    else
-      " let vim generate the proper error
-      silent exec a:command . ' ' . a:args
-    endif
-  catch /E480/
-    " no results found
-  catch /.*/
-    call eclim#util#EchoError(v:exception)
-    return
-  finally
-    let &autochdir = acd
-    " force quickfix / location list signs to update.
-    call eclim#display#signs#Update()
-  endtry
-
-  let numresults = len(a:command =~ '^l' ? getloclist(0) : getqflist())
-  if numresults == 0
-    call eclim#util#EchoInfo('No results found.')
   endif
 endfunction " }}}
 
@@ -874,14 +905,26 @@ endfunction " }}}
 
 function! eclim#project#util#GetProjectWorkspace(name) " {{{
   " Gets the workspace that a project belongs to.
-  let project = {}
-  for p in eclim#project#util#GetProjects()
-    if p.name == a:name
-      let project = p
-      break
-    endif
+
+  " ensure s:workspace_projects is initialized
+  call eclim#project#util#GetProjects()
+
+  " loop through each workspace since the same project name could be used in
+  " more than one workspace.
+  let workspaces = []
+  for [workspace, projects] in items(s:workspace_projects)
+    for p in projects
+      if p.name == a:name
+        call add(workspaces, workspace)
+        break
+      endif
+    endfor
   endfor
-  return get(project, 'workspace', '')
+
+  if len(workspaces) > 1
+    return workspaces
+  endif
+  return len(workspaces) ? workspaces[0] : ''
 endfunction " }}}
 
 function! eclim#project#util#GetProjectRelativeFilePath(...) " {{{
@@ -901,7 +944,7 @@ function! eclim#project#util#GetProjectRelativeFilePath(...) " {{{
 
   let file = substitute(fnamemodify(file, ':p'), '\', '/', 'g')
   let pattern = '\(/\|$\)'
-  if has('win32') || has('win64')
+  if has('win32') || has('win64') || has('macunix')
     let pattern .= '\c'
   endif
   let result = substitute(file, get(project, 'path', '') . pattern, '', '')
@@ -989,7 +1032,7 @@ function! eclim#project#util#GetProject(path) " {{{
 
   let path = substitute(fnamemodify(path, ':p'), '\', '/', 'g')
   let pattern = '\(/\|$\)'
-  if has('win32') || has('win64')
+  if has('win32') || has('win64') || has('macunix')
     let pattern .= '\c'
   endif
 
@@ -1055,13 +1098,12 @@ function! eclim#project#util#GetProjectNames(...) " {{{
       let projects += results
     endfor
 
-    call map(projects, "v:val.name")
-    return projects
+    let names = map(projects, "v:val.name")
+  else
+    let names = map(eclim#project#util#GetProjects(), 'v:val.name')
   endif
 
-  let names = map(eclim#project#util#GetProjects(), 'v:val.name')
-  call sort(names)
-  return names
+  return eclim#util#ListDedupe(sort(names))
 endfunction " }}}
 
 function! eclim#project#util#GetProjectNatureAliases(...) " {{{
