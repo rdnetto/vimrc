@@ -53,6 +53,7 @@ let g:pymode_lint_ignore = "C0301,C901,E128,E221,E226,E261,E501,E731,W0401,W391"
 let g:pymode_lint_mccabe_complexity = 25
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_lint_checkers = ['pep8']
 
 " Smeargle
 let g:smeargle_colouring_scheme = ''
