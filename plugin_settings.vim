@@ -73,6 +73,10 @@ let g:tlTokenList = ['WIP', 'BUG', 'TODO']
 let g:vebugger_leader='<Leader>d'
 let g:vebugger_view_source_cmd='edit'
 
+" Vim-dutyl - configure paths for D autocompletion
+call dutyl#register#tool('dcd-client', $HOME . '/bin/dcd-client')
+call dutyl#register#tool('dcd-server', $HOME . '/bin/dcd-server')
+
 " Vim-gitgutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_map_keys = 0

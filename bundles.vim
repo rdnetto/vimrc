@@ -72,6 +72,7 @@ if g:profile  ==? "full"
     NeoBundle 'Twinside/vim-haskellFold'
     NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
     NeoBundle 'trapd00r/irc.vim'
+    NeoBundle 'idanarye/vim-dutyl'
 
     if has('lua')
         NeoBundle 'jeaye/color_coded', {
