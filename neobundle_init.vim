@@ -33,7 +33,6 @@ endif
 
 " Load bundles
 source ~/.vim/bundles.vim
-unlet g:profile
 
 " Finalize
 call neobundle#end()
