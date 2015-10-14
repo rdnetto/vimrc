@@ -17,8 +17,8 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # YCM is too big to be installed automatically (download times out)
 if [[ "$1" == "full" ]]; then
-    git clone --recursive https://github.com/Valloric/YouCompleteMe.git "~/.vim/bundle/YouCompleteMe"
-    ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang
+    git clone --recursive https://github.com/Valloric/YouCompleteMe.git "$HOME/.vim/bundle/YouCompleteMe"
+    $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang
 
     echo "Please install app-vim/automatictexplugin for full LaTeX support."
 fi
