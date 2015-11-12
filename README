@@ -118,3 +118,4 @@ DEBUGGING (see :help vebugger-keymaps)
 :GraphvizInteractive            Auto-updating view for graphs
 :SSave / :SLoad / :SDelete      Session management (built-in to Startify, auto-updating)
 ^K / :digraphs                  Insert non-ASCII characters
+:r! / :w! / :!                  Pipe a selection into / replace with / both a process
