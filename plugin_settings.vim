@@ -28,9 +28,6 @@ let g:easytags_languages = {
 \   }
 \}
 
-" Eclim - needed for integration with YCM
-let g:EclimCompletionMethod = 'omnifunc'
-
 " Haskell mode
 let g:haddock_browser = "xdg-open"
 
