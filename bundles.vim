@@ -3,95 +3,93 @@
 " Colour schemes
 " Nice color schemes: pablo, xterm16, relaxedgreen, vividchalk.
 " Comparison: http://vimcolorschemetest.googlecode.com/svn/html/index-c.html
-NeoBundle 'Relaxed-Green'
-NeoBundle 'tomasr/molokai'
+Plug 'Relaxed-Green'
+Plug 'tomasr/molokai'
 
 " UI
-NeoBundle 'bling/vim-airline'
-NeoBundle 'mhinz/vim-startify'
-NeoBundle 'kien/ctrlp.vim.git'
-NeoBundle 'chrisbra/Recover.vim'
-NeoBundle 'scrooloose/nerdtree.git'
-NeoBundle 'vim-scripts/TaskList.vim'
-NeoBundle 'bogado/file-line'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+Plug 'bling/vim-airline'
+Plug 'mhinz/vim-startify'
+Plug 'kien/ctrlp.vim.git'
+Plug 'chrisbra/Recover.vim'
+Plug 'scrooloose/nerdtree.git'
+Plug 'vim-scripts/TaskList.vim'
+Plug 'bogado/file-line'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Movement
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'jayflo/vim-skip'
-NeoBundle 'nelstrom/vim-visual-star-search'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'jayflo/vim-skip'
+Plug 'nelstrom/vim-visual-star-search'
 
 " Text objects
-NeoBundle 'michaeljsmith/vim-indent-object'
+Plug 'michaeljsmith/vim-indent-object'
 
 " Text editing
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-characterize'
-NeoBundle 'kana/vim-niceblock'
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-characterize'
+Plug 'kana/vim-niceblock'
+Plug 'junegunn/vim-easy-align'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/nerdcommenter'
 
 " Misc
-NeoBundle 'restore_view.vim'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'airblade/vim-rooter'
+Plug 'restore_view.vim'
+Plug 'tpope/vim-eunuch'
+Plug 'scrooloose/syntastic'
+Plug 'mileszs/ack.vim'
+Plug 'airblade/vim-rooter'
 
 if g:profile  ==? "full"
+    " languages to load clang-based plugins for (YCM, color_coded)
+    let g:clang_languages = ['c', 'cpp', 'cs', 'python', 'haskell']
+
     " Tag support (requires exuberant-ctags)
-    NeoBundle 'majutsushi/tagbar'
-    NeoBundle 'xolox/vim-misc'
-    NeoBundle 'xolox/vim-pyref'
-    NeoBundle 'xolox/vim-easytags'
+    Plug 'majutsushi/tagbar'
+    Plug 'xolox/vim-misc'
+    Plug 'xolox/vim-pyref'
+    Plug 'xolox/vim-easytags'
 
     " Git integration
-    NeoBundle 'airblade/vim-gitgutter'
-    NeoBundle 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
 
     if has('ruby')
-        NeoBundle 'FriedSock/smeargle'
+        Plug 'FriedSock/smeargle'
     endif
 
     " Debugging
-    NeoBundle 'mattboehm/vim-unstack'
-    NeoBundle 'idanarye/vim-vebugger'
+    Plug 'mattboehm/vim-unstack'
+    Plug 'idanarye/vim-vebugger', {'branch' : 'develop'}
 
     " Language specific
-    NeoBundle 'klen/python-mode'
-    NeoBundle 'adimit/prolog.vim'
-    NeoBundle 'wannesm/wmgraphviz.vim'
-    NeoBundle 'eagletmt/ghcmod-vim'
-    NeoBundle 'bitc/vim-hdevtools'
-    NeoBundle 'eagletmt/neco-ghc'
-    NeoBundle 'Twinside/vim-haskellFold'
-    NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
-    NeoBundle 'trapd00r/irc.vim'
-    NeoBundle 'idanarye/vim-dutyl'
-    NeoBundle 'JalaiAmitahl/maven-compiler.vim'
+    Plug 'klen/python-mode'
+    Plug 'adimit/prolog.vim'
+    Plug 'wannesm/wmgraphviz.vim'
+    Plug 'eagletmt/ghcmod-vim'
+    Plug 'bitc/vim-hdevtools'
+    Plug 'eagletmt/neco-ghc'
+    Plug 'Twinside/vim-haskellFold'
+    Plug 'LaTeX-Box-Team/LaTeX-Box'
+    Plug 'trapd00r/irc.vim'
+    Plug 'idanarye/vim-dutyl', {'branch' : 'develop'}
+    Plug 'JalaiAmitahl/maven-compiler.vim'
 
     if has('lua')
-        NeoBundle 'jeaye/color_coded', {
-                    \ 'build' : {
-                    \     'unix' : 'cmake -DCMAKE_C_COMPILER=gcc-4.9.2 -DCMAKE_CXX_COMPILER=g++-4.9.2 . && make -j6',
-                    \    },
-                    \ 'augroup' : 'youcompletemeStart'
+        Plug 'jeaye/color_coded', {
+                    \ 'do'  : 'cmake -DCMAKE_C_COMPILER=gcc-4.9.2 -DCMAKE_CXX_COMPILER=g++-4.9.2 . && make -j6',
+                    \ 'for' : g:clang_languages,
                     \ }
     endif
 
-    " Omnicomplete - use lazy loading since it adds ~800ms to startup
-    NeoBundle 'rdnetto/YCM-Generator'
-    NeoBundleLazy 'Valloric/YouCompleteMe', {
-                    \ 'build' : {
-                    \     'unix' : './install.sh --clang-completer --system-libclang',
-                    \    },
-                    \ 'augroup' : 'youcompletemeStart'
+    " Use lazy-loading for YCM as it takes ~800ms otherwise
+    Plug 'rdnetto/YCM-Generator', {'branch' : 'develop'}
+    Plug 'Valloric/YouCompleteMe', {
+                    \ 'do'  :  './install.py --clang-completer --system-libclang',
+                    \ 'for' : g:clang_languages,
                     \ }
-    autocmd FileType c,cpp,cs,python,haskell NeoBundleSource YouCompleteMe
 endif
 
