@@ -33,6 +33,7 @@ ai/ii           Text object for block of indented code, optionally including the
 \ig             Show indentation guides
 [i / [I         Show the definition of / all references to the identifier under the cursor. (Useful for checking types)
 gd / gD         Go to the definition of the current identifier in the current file / function.
+z/ / z?         Forward/backward fuzzy search
 
 SURROUND.VIM
 ys<MOTION>]     Surround MOTION with ] brackets (use left bracket to add spaces). Supports XML tags as well.
