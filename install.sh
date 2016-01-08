@@ -7,9 +7,11 @@ if [[ -z "$1" || "$1" != "light" && "$1" != "full" ]]; then
     exit 1
 fi
 
-cd ~
 echo "$1" > ~/.vim/profile
-ln -s .vim .nvim
+
+mkdir -p ~/.config
+cd ~/.config
+ln -s nvim ~/.vim
 cd - >/dev/null
 
 #Need to manually install the package manager, so it can pull everything else in
