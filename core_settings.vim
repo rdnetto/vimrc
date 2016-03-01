@@ -74,9 +74,13 @@ set undodir=~/.vim/undo
 set undofile
 
 " Set colorscheme
-if has("gui_running")
+" Enable 24-bit colour support under Neovim, if the terminal supports it
+if has("gui_running") || (has("nvim") && $TERMINAL == "/usr/bin/konsole")
+    " 24-bit colour scheme
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
     colorscheme molokai
 else
+    " 256 colour scheme
     colorscheme relaxedgreen
 endif
 
