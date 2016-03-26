@@ -7,7 +7,8 @@ Plug 'Relaxed-Green'
 Plug 'tomasr/molokai'
 
 " UI
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'kien/ctrlp.vim.git'
 Plug 'chrisbra/Recover.vim'
