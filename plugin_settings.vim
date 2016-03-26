@@ -99,6 +99,7 @@ let g:vimskip_mapbackwardskip = '<Leader>S'
 let g:vimskip_maptocenter = '<Leader>gs'
 
 " Vim-Startify
+let g:startify_custom_header = startify#fortune#boxed()
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']
 let g:startify_session_persistence = 1
 let g:startify_session_delete_buffers = 1
