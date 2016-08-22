@@ -71,14 +71,20 @@ if g:profile  ==? "full"
     Plug 'klen/python-mode'
     Plug 'adimit/prolog.vim'
     Plug 'wannesm/wmgraphviz.vim'
-    Plug 'eagletmt/ghcmod-vim'
-    Plug 'bitc/vim-hdevtools'
-    Plug 'eagletmt/neco-ghc'
-    Plug 'Twinside/vim-haskellFold'
     Plug 'LaTeX-Box-Team/LaTeX-Box'
     Plug 'trapd00r/irc.vim'
     Plug 'idanarye/vim-dutyl', {'branch' : 'develop'}
     Plug 'lepture/vim-velocity'
+
+    " Haskell
+    Plug 'eagletmt/ghcmod-vim'
+    Plug 'eagletmt/neco-ghc'
+    Plug 'itchyny/vim-haskell-indent'
+    Plug 'itchyny/vim-haskell-sort-import'
+    Plug 'Twinside/vim-haskellFold'
+
+    " needed by ghc-mod
+    Plug 'Shougo/vimproc.vim'
 
     if has('lua')
         Plug 'jeaye/color_coded', {
