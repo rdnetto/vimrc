@@ -78,7 +78,6 @@ if g:profile  ==? "full"
     Plug 'LaTeX-Box-Team/LaTeX-Box'
     Plug 'trapd00r/irc.vim'
     Plug 'idanarye/vim-dutyl', {'branch' : 'develop'}
-    Plug 'JalaiAmitahl/maven-compiler.vim'
     Plug 'lepture/vim-velocity'
 
     if has('lua')
