@@ -36,6 +36,7 @@ Plug 'kana/vim-niceblock'
 Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdcommenter'
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Misc
 Plug 'restore_view.vim'
