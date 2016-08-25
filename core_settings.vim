@@ -86,8 +86,8 @@ endif
 
 " Set font, accounting for DPI. Desktop has 95 (on 1920x1200), yuki has 96
 if system("xdpyinfo | perl -ne '/resolution.*x([0-9]+)/ && print $1;'") < 96
-    set guifont=DejaVu\ Sans\ Mono\ 11
+    set guifont=Droid\ Sans\ Mono\ 11
 else
-    set guifont=DejaVu\ Sans\ Mono\ 14
+    set guifont=Droid\ Sans\ Mono\ 14
 endif
 
