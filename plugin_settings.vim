@@ -107,7 +107,7 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_empty_buffer_key = 'n'
 let g:startify_relative_path = 1
 let g:startify_files_number = 20
-autocmd User Startified call AirlineRefresh
+autocmd User Startified AirlineRefresh
 autocmd BufEnter * call UpdateStartify()
 
 " Vim-unstack
