@@ -16,6 +16,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 
 " Easytags - requires hasktags package for Haskell support
 let g:easytags_file = '$HOME/.vim/tags'
+let g:easytags_suppress_ctags_warning = 1
 let g:easytags_dynamic_files = 2
 let g:easytags_auto_update = 1
 let g:easytags_languages = {
