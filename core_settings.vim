@@ -77,7 +77,7 @@ set undofile
 " Enable 24-bit colour support under Neovim, if the terminal supports it
 if has("gui_running") || has("nvim")
     " 24-bit colour scheme
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    set termguicolors
     colorscheme molokai
 else
     " 256 colour scheme
