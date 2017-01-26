@@ -18,7 +18,7 @@ Plug 'bogado/file-line'
 Plug 'nathanaelkane/vim-indent-guides'
 
 " Movement
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'jayflo/vim-skip'
 Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
 
