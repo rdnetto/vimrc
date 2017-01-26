@@ -19,7 +19,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 
 " Movement
 Plug 'easymotion/vim-easymotion'
-Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
+Plug 'pgdouyon/vim-evanesco'
 
 " Text objects
 Plug 'michaeljsmith/vim-indent-object'
