@@ -49,7 +49,6 @@ if g:profile  ==? "full"
     " Tag support (requires exuberant-ctags)
     Plug 'majutsushi/tagbar'
     Plug 'xolox/vim-misc'
-    Plug 'xolox/vim-pyref'
     Plug 'xolox/vim-easytags'
 
     " Git integration
