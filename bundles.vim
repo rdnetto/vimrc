@@ -63,7 +63,6 @@ if g:profile  ==? "full"
     Plug 'wannesm/wmgraphviz.vim'
     Plug 'LaTeX-Box-Team/LaTeX-Box'
     Plug 'trapd00r/irc.vim'
-    Plug 'idanarye/vim-dutyl', {'branch' : 'develop'}
     Plug 'lepture/vim-velocity'
 
     " Haskell
