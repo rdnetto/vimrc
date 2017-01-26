@@ -14,7 +14,7 @@ gv              Re-select last visual selection
 gf              Open filename under cursor
 gq<MOTION>      Format lines. Like = for comments. e.g. enforce text width, move words between lines, etc.
 \*              Recursive grep for symbol under cursor. (TODO: remap to use ack, remove vim-visual-star)
-\cu             Nerd Commenter - Uncomments the current line
+gc<MOTION>/gcc  Commentary: Comment out a motion/line
 \<Space>[N] X   Easy Align [V mode] - aligns selection about the Nth 'X'. (N is optional)
 \ <MOTION>      Easy Align [N mode] - as above, but with a motion. e.g. '\ 4j'
 \s              Vim-Unstack [V mode] - when a stack trace is selected, open as a series of vsplit windows

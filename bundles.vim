@@ -31,10 +31,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-commentary'
 Plug 'kana/vim-niceblock'
 Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'scrooloose/nerdcommenter'
 Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Misc
