@@ -56,7 +56,6 @@ if g:profile  ==? "full"
     Plug 'tpope/vim-fugitive'
 
     " Debugging
-    Plug 'mattboehm/vim-unstack'
     Plug 'idanarye/vim-vebugger', {'branch' : 'develop'}
 
     " Language specific

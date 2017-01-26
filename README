@@ -16,7 +16,6 @@ gq<MOTION>      Format lines. Like = for comments. e.g. enforce text width, move
 gc<MOTION>/gcc  Commentary: Comment out a motion/line
 \<Space>[N] X   Easy Align [V mode] - aligns selection about the Nth 'X'. (N is optional)
 \ <MOTION>      Easy Align [N mode] - as above, but with a motion. e.g. '\ 4j'
-\s              Vim-Unstack [V mode] - when a stack trace is selected, open as a series of vsplit windows
 mX              Set mark X to cursor position
 `X              Go to mark X (as indicated in gutter)
 ^W<ARROW>       Go to window in <DIR>

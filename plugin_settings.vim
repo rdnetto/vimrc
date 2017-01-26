@@ -103,10 +103,6 @@ let g:startify_files_number = 20
 autocmd User Startified AirlineRefresh
 autocmd BufEnter * call UpdateStartify()
 
-" Vim-unstack
-let g:unstack_mapkey = '<S-Leader>s'
-let g:unstack_populate_quickfix = 1
-
 " WM Graphviz
 let g:WMGraphviz_output = "png"
 
