@@ -74,22 +74,17 @@ set undodir=~/.vim/undo
 set undofile
 
 " Set colorscheme
-if has("gui_running")
-    " 24-bit colour scheme
-    colorscheme molokai
-elseif has("nvim")
+if has("nvim")
     " Neovim: 24-bit colour scheme
     set termguicolors
     colorscheme molokai
+elseif has("gui_running")
+    " 24-bit colour scheme
+    " We need to explicitly source ginit.vim here, since vim-qt doesn't, whereas Neovim does
+    colorscheme molokai
+    source ~/.vim/ginit.vim
 else
     " 256 colour scheme
     colorscheme relaxedgreen
-endif
-
-" Set font, accounting for DPI. Desktop has 95 (on 1920x1200), yuki has 96
-if system("xdpyinfo | perl -ne '/resolution.*x([0-9]+)/ && print $1;'") < 96
-    set guifont=Droid\ Sans\ Mono\ 11
-else
-    set guifont=Droid\ Sans\ Mono\ 14
 endif
 
