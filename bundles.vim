@@ -34,7 +34,6 @@ Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-niceblock'
 Plug 'junegunn/vim-easy-align'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Misc
