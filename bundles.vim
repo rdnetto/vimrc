@@ -40,7 +40,6 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'restore_view.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/syntastic'
-Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-rooter'
 
 if g:profile  ==? "full"
