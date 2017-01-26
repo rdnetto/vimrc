@@ -94,11 +94,6 @@ let g:rooter_patterns = g:rooter_default_patterns
 let g:rooter_use_lcd = 1
 let g:rooter_disable_map = 1
 
-" Vim-skip
-let g:vimskip_mapforwardskip = '<Leader>s'
-let g:vimskip_mapbackwardskip = '<Leader>S'
-let g:vimskip_maptocenter = '<Leader>gs'
-
 " Vim-Startify
 let g:startify_custom_header = startify#fortune#boxed()
 let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks']

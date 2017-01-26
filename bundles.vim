@@ -19,7 +19,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 
 " Movement
 Plug 'easymotion/vim-easymotion'
-Plug 'jayflo/vim-skip'
 Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
 
 " Text objects
