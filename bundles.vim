@@ -60,7 +60,6 @@ if g:profile  ==? "full"
 
     " Language specific
     Plug 'klen/python-mode'
-    Plug 'adimit/prolog.vim'
     Plug 'wannesm/wmgraphviz.vim'
     Plug 'LaTeX-Box-Team/LaTeX-Box'
     Plug 'trapd00r/irc.vim'
