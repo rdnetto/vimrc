@@ -53,9 +53,6 @@ let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_lint_checkers = ['pep8']
 
-" Smeargle
-let g:smeargle_colouring_scheme = ''
-
 " Tagbar
 let g:tagbar_sort = 0
 let g:tagbar_show_linenumbers = -1

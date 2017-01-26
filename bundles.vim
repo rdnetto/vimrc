@@ -55,10 +55,6 @@ if g:profile  ==? "full"
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
 
-    if has('ruby')
-        Plug 'FriedSock/smeargle'
-    endif
-
     " Debugging
     Plug 'mattboehm/vim-unstack'
     Plug 'idanarye/vim-vebugger', {'branch' : 'develop'}
