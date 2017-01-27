@@ -59,8 +59,8 @@ nnoremap <silent> <F4> :bd<CR>
 nnoremap <silent> <S-F4> :bd!<CR>
 nnoremap <silent> <F6> :call GotoHeader()<CR>
 nnoremap <silent> <F7> :ccl<CR>
-nnoremap <silent> <F8> :wa<CR>:make<CR>
-nnoremap <silent> <S-F8> :w<CR>:make<CR>
+nnoremap <silent> <F8> :wa<CR>:Neomake!<CR>
+nnoremap <silent> <S-F8> :w<CR>:Neomake!<CR>
 nmap     <silent> <F9> <Plug>TaskList
 nnoremap <silent> <F10> :TagbarOpenAutoClose<CR>
 
@@ -88,4 +88,7 @@ autocmd BufFilePost,BufReadPost * silent! lcd %:p:h
 " Make Vebugger actions set the repeat.vim hook
 nmap <silent> <Plug>VBGrepeat :VBGrepeat<CR>
 autocmd User Vebugger_PostUserAction call repeat#set("\<Plug>VBGrepeat", v:count)
+
+" Trigger linter on save
+autocmd! BufWritePost * Neomake
 

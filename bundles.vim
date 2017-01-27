@@ -41,7 +41,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 " Misc
 Plug 'restore_view.vim'
 Plug 'tpope/vim-eunuch'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'airblade/vim-rooter'
 
 if g:profile  ==? "full"
