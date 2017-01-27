@@ -5,12 +5,6 @@ let g:airline_theme = 'powerlineish'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" CtrlP
-let g:ctrlp_working_path_mode = 'rc'
-let g:ctrlp_mruf_max = 1000
-let g:ctrlp_mruf_exclude = '/var/tmp/.*XX.*'
-let g:ctrlp_reuse_window = 'startify'
-
 " EasyMotion - don't require a double tap of leader key
 let g:EasyMotion_leader_key = '<Leader>'
 

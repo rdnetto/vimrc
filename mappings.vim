@@ -51,9 +51,9 @@ autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 " ----------------------------------------------------------------------------------------------------
 
 " Function keys
-nnoremap <silent> <F2> :CtrlPTag<CR>
-nnoremap <silent> <F3> :CtrlPMRUFiles<CR>
-nnoremap <silent> <S-F3> :CtrlPBuffer<CR>
+nnoremap <silent> <F2> :Tags<CR>
+nnoremap <silent> <F3> :call SmartFiles()<CR>
+nnoremap <silent> <S-F3> :Buffers<CR>
 nnoremap <silent> <F4> :bd<CR>
 nnoremap <silent> <S-F4> :bd!<CR>
 nnoremap <silent> <F6> :call GotoHeader()<CR>

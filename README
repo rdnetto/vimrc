@@ -1,6 +1,6 @@
-F2              Tags (CtrlP)
-F3              Recently Used Files (CtrlP)
-F3-S            Buffers (CtrlP)
+F2              Tags (Fzf)
+F3              Recently Used Files (Fzf)
+F3-S            Buffers (Fzf)
 F4              Close buffer
 F6              Jump between source (.c) and headers files (.h)
 F7              Close quickfix list (:ccl)

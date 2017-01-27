@@ -86,3 +86,15 @@ function! KgdbConnect()
     endfor
 endfunction
 
+" Function for dynamically choosing find / git ls-files for fzf
+function! SmartFiles()
+    silent !git rev-parse --is-inside-work-tree &>/dev/null
+    if v:shell_error
+        " error - this is not a git repo
+        FilesMru
+    else
+        " 0 - this is a git repo
+        ProjectMru
+    endif
+endfunction
+
