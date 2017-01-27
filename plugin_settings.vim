@@ -8,21 +8,6 @@ let g:airline#extensions#tabline#enabled = 1
 " EasyMotion - don't require a double tap of leader key
 let g:EasyMotion_leader_key = '<Leader>'
 
-" Easytags - requires hasktags package for Haskell support
-let g:easytags_file = '$HOME/.vim/tags'
-let g:easytags_suppress_ctags_warning = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_auto_update = 1
-let g:easytags_languages = {
-\   'haskell': {
-\     'cmd': "/usr/bin/hasktags",
-\       'args': ["-c"],
-\       'fileoutput_opt': '-f',
-\       'stdout_opt': '-f-',
-\       'recurse_flag': ''
-\   }
-\}
-
 " Haskell mode
 let g:haddock_browser = "xdg-open"
 

@@ -84,9 +84,6 @@ map <silent> <unique> <Leader>cd :call ToggleWD()<CR>
 autocmd BufAdd * silent! lcd %<afile>:h
 autocmd BufFilePost,BufReadPost * silent! lcd %:p:h
 
-" Disable easytags for large files
-autocmd BufRead * call ToggleEasytags()
-
 " Make Vebugger actions set the repeat.vim hook
 nmap <silent> <Plug>VBGrepeat :VBGrepeat<CR>
 autocmd User Vebugger_PostUserAction call repeat#set("\<Plug>VBGrepeat", v:count)

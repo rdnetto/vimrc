@@ -50,8 +50,7 @@ if g:profile  ==? "full"
 
     " Tag support (requires exuberant-ctags)
     Plug 'majutsushi/tagbar'
-    Plug 'xolox/vim-misc'
-    Plug 'xolox/vim-easytags'
+    Plug 'ludovicchabant/vim-gutentags'
 
     " Git integration
     Plug 'airblade/vim-gitgutter'

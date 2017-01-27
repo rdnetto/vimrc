@@ -38,25 +38,6 @@ function ToggleWD()
     endif
 endfunction
 
-" Function for automatically disabling easytags when the tags file is too big
-function ToggleEasytags()
-    let l:tagsfile = findfile('tags', expand('<afile>:p:h') . ';')
-    if empty(l:tagsfile)
-        let l:tagsfile = expand("$HOME/.vim/tags")
-    endif
-
-    if(empty(l:tagsfile))
-        echomsg 'Couldnt find tags file'
-        return
-    endif
-
-    let l:size = system('stat -c %s ' . l:tagsfile)
-    if l:size > 1000000 && g:easytags_auto_update
-        let g:easytags_auto_update = 0
-        echomsg "Large tags file detected - disabling auto-updates"
-    endif
-endfunction
-
 " Function for jumping back and forth between source and header files
 function! GotoHeader()
     if(expand("%:e") == "c" || expand("%:e") == "cpp")
