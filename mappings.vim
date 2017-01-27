@@ -54,6 +54,7 @@ autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 nnoremap <silent> <F2> :Tags<CR>
 nnoremap <silent> <F3> :call SmartFiles()<CR>
 nnoremap <silent> <S-F3> :Buffers<CR>
+nnoremap <silent> <C-P> :FilesMru<CR>
 nnoremap <silent> <F4> :bd<CR>
 nnoremap <silent> <S-F4> :bd!<CR>
 nnoremap <silent> <F6> :call GotoHeader()<CR>
