@@ -46,6 +46,13 @@ nnoremap <silent> <C-L> :let @/=""<CR><C-L>
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+" Use Escape to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
+
+" Allow switching between buffers without leaving terminal mode
+tnoremap [b <C-\><C-n>:bp<CR>
+tnoremap ]b <C-\><C-n>:bn<CR>
+
 " ----------------------------------------------------------------------------------------------------
 " Mappings
 " ----------------------------------------------------------------------------------------------------
@@ -91,4 +98,7 @@ autocmd User Vebugger_PostUserAction call repeat#set("\<Plug>VBGrepeat", v:count
 
 " Trigger linter on save
 autocmd! BufWritePost * Neomake
+
+" Automatically enter insert mode when entering terminal
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
