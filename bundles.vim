@@ -65,6 +65,7 @@ if g:profile  ==? "full"
     Plug 'LaTeX-Box-Team/LaTeX-Box'
     Plug 'trapd00r/irc.vim'
     Plug 'lepture/vim-velocity'
+    Plug 'artur-shaik/vim-javacomplete2'
 
     " Haskell
     Plug 'Shougo/vimproc.vim' | Plug 'eagletmt/ghcmod-vim'
