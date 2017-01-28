@@ -67,14 +67,12 @@ if g:profile  ==? "full"
     Plug 'lepture/vim-velocity'
 
     " Haskell
-    Plug 'eagletmt/ghcmod-vim'
+    Plug 'Shougo/vimproc.vim' | Plug 'eagletmt/ghcmod-vim'
     Plug 'eagletmt/neco-ghc'
     Plug 'itchyny/vim-haskell-indent'
     Plug 'itchyny/vim-haskell-sort-import'
     Plug 'Twinside/vim-haskellFold'
-
-    " needed by ghc-mod
-    Plug 'Shougo/vimproc.vim'
+    Plug 'neovimhaskell/haskell-vim'
 
     " Misc
     Plug 'editorconfig/editorconfig-vim'
