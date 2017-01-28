@@ -8,11 +8,8 @@ let g:airline#extensions#tabline#enabled = 1
 " EasyMotion - don't require a double tap of leader key
 let g:EasyMotion_leader_key = '<Leader>'
 
-" Haskell mode
-let g:haddock_browser = "xdg-open"
-
-" Hdevtools
-let g:hdevtools_options = '-g -hide-package=monads-tf -g -fglasgow-exts'
+" Haskell-vim - disable indentation, since vim-haskell-indent for that instead
+let g:haskell_indent_disable = 1
 
 " Latex-Box
 let g:LatexBox_Folding = 1

@@ -68,12 +68,12 @@ if g:profile  ==? "full"
     Plug 'artur-shaik/vim-javacomplete2'
 
     " Haskell
-    Plug 'Shougo/vimproc.vim' | Plug 'eagletmt/ghcmod-vim'
     Plug 'eagletmt/neco-ghc'
     Plug 'itchyny/vim-haskell-indent'
     Plug 'itchyny/vim-haskell-sort-import'
     Plug 'Twinside/vim-haskellFold'
     Plug 'neovimhaskell/haskell-vim'
+    Plug 'parsonsmatt/intero-neovim'
 
     " Misc
     Plug 'editorconfig/editorconfig-vim'
