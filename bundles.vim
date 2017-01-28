@@ -78,13 +78,6 @@ if g:profile  ==? "full"
     " Misc
     Plug 'editorconfig/editorconfig-vim'
 
-    if has('lua')
-        Plug 'jeaye/color_coded', {
-                    \ 'do'  : 'cmake -DCMAKE_C_COMPILER=gcc-4.9.2 -DCMAKE_CXX_COMPILER=g++-4.9.2 . && make -j6',
-                    \ 'for' : g:clang_languages,
-                    \ }
-    endif
-
     " Use lazy-loading for YCM as it takes ~800ms otherwise
     Plug 'rdnetto/YCM-Generator', {'branch' : 'develop'}
     Plug 'Valloric/YouCompleteMe', {
