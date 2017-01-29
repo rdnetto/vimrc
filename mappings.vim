@@ -84,6 +84,9 @@ nmap <silent> <Leader>ar :AirlineRefresh<CR>
 " Mapping for toggling working directory (wrapper for Vim-Rooter)
 map <silent> <unique> <Leader>cd :call ToggleWD()<CR>
 
+" Mapping to set filetype using fzf.vim
+nmap <Leader><Leader>ft :Filetypes<CR>
+
 " ----------------------------------------------------------------------------------------------------
 " Autocmds
 " ----------------------------------------------------------------------------------------------------
