@@ -18,6 +18,26 @@ let g:no_atp_maps = 1
 " Neco-ghc
 let g:necoghc_enable_detailed_browse = 1
 
+" Neomake
+let g:neomake_open_list = 2
+" This has to be invoked explicitly as :NeomakeProject stackbuild
+let s:mapexpr = 'substitute(v:val, "\n", "", "g")'
+let g:neomake_stackbuild_maker = {
+    \ 'exe': 'stack',
+    \ 'args': ['build'],
+    \ 'mapexpr': s:mapexpr,
+    \ 'errorformat':
+        \ '%-G%\s%#,' .
+        \ '%f:%l:%c:%trror: %m,' .
+        \ '%f:%l:%c:%tarning: %m,'.
+        \ '%f:%l:%c: %trror: %m,' .
+        \ '%f:%l:%c: %tarning: %m,' .
+        \ '%E%f:%l:%c:%m,' .
+        \ '%E%f:%l:%c:,' .
+        \ '%Z%m'
+    \ }
+
+
 " NERDTree
 let g:NERDTreeMouseMode = 3
 let g:NERDTreeQuitOnOpen = 1

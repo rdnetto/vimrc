@@ -2,7 +2,7 @@
 let g:haskellmode_completion_ghc = 0
 setlocal omnifunc=necoghc#omnifunc
 
-setlocal makeprg=stack\ build
+nnoremap <buffer> <silent> <F8> :wa<CR>:NeomakeProject stackbuild<CR>
 
 " ghc-mod mappings
 nnoremap <silent> <leader>ht :GhcModType!<CR>
