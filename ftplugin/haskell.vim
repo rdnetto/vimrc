@@ -10,6 +10,9 @@ nnoremap <silent> <leader>hI :GhcModTypeInsert!<CR>
 nnoremap <silent> <leader>hl :GhcModTypeClear<CR>
 nnoremap <silent> <leader>hi :GhcModInfo!<CR>
 
+" Replace tags with Intero
+nnoremap <silent> <C-]> :InteroGoToDef<CR>
+
 " Auto-sort imports
 autocmd BufWritePre <buffer> HaskellSortImport
 
