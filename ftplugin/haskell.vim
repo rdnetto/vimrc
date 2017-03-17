@@ -15,4 +15,10 @@ nnoremap <silent> <C-]> :InteroGoToDef<CR>
 
 " Auto-sort imports
 autocmd BufWritePre <buffer> HaskellSortImport
+autocmd BufWritePost <buffer> call InteroClearAndReload()
+
+function! InteroClearAndReload()
+    call intero#repl#send(':! clear')
+    call intero#repl#send(':reload')
+endfunction
 
