@@ -3,3 +3,6 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " Add support for files using C preprocessor
 autocmd BufNewFile,BufRead *.hsc set filetype=haskell
+
+" Soy
+autocmd BufNewFile,BufRead *.soy set filetype=soy
