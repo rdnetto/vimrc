@@ -102,6 +102,3 @@ autocmd User Vebugger_PostUserAction call repeat#set("\<Plug>VBGrepeat", v:count
 " Trigger linter on save
 autocmd! BufWritePost * Neomake
 
-" Automatically enter insert mode when entering terminal
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-
