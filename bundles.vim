@@ -67,6 +67,8 @@ if g:profile  ==? "full"
     Plug 'lepture/vim-velocity'
     Plug 'duganchen/vim-soy'
     Plug 'artur-shaik/vim-javacomplete2'
+    Plug 'cespare/vim-toml'
+    Plug 'rust-lang/rust.vim'
 
     " Haskell
     Plug 'eagletmt/neco-ghc'
