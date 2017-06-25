@@ -3,7 +3,7 @@
 " Colour schemes
 " Nice color schemes: pablo, xterm16, relaxedgreen, vividchalk.
 " Comparison: http://vimcolorschemetest.googlecode.com/svn/html/index-c.html
-Plug 'Relaxed-Green'
+Plug 'vim-scripts/Relaxed-Green'
 Plug 'tomasr/molokai'
 
 " UI
@@ -39,7 +39,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Misc
-Plug 'restore_view.vim'
+Plug 'vim-scripts/restore_view.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-rooter'
