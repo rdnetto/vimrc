@@ -20,7 +20,6 @@ autocmd BufWritePre <buffer> HaskellSortImport
 " Helper function for switching to intero and reloading files
 " We invoke this from the hotkey instead of on BufWritePost, to ensure it only happens once when multiple files are open.
 function! InteroBuild()
-    exe 'silent! buffer ' . g:intero_buffer_id
     call intero#repl#send(':! clear')
     call intero#repl#send(':reload')
 endfunction
