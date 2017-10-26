@@ -44,7 +44,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-rooter'
 
-if g:profile  ==? "full"
+if g:profile  ==? 'full'
     " languages to load clang-based plugins for (YCM, color_coded)
     let g:clang_languages = ['c', 'cpp', 'cs', 'python', 'haskell']
 

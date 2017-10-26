@@ -25,7 +25,7 @@ endfunction
 
 " More intelligent working directory switching
 function ToggleWD()
-    if expand('%') =~ "/"
+    if expand('%') =~# '/'
 		lcd %:p:h
     else
         if IsInKernelSource()
@@ -40,30 +40,30 @@ endfunction
 
 " Function for jumping back and forth between source and header files
 function! GotoHeader()
-    if(expand("%:e") == "c" || expand("%:e") == "cpp")
-        execute ":edit " . expand("%:r") . ".h"
-    elseif(expand("%:e") == "h")
-        execute ":edit " . expand("%:r") . ".c*"
+    if(expand('%:e') ==? 'c' || expand('%:e') ==? 'cpp')
+        execute ':edit ' . expand('%:r') . '.h'
+    elseif(expand('%:e') ==? 'h')
+        execute ':edit ' . expand('%:r') . '.c*'
     else
-        echoerr "ERROR: Unknown filetype"
+        echoerr 'ERROR: Unknown filetype'
     endif
 endfunction
 
 " Function for connecting to kgdb (using helper script to get symbol table info)
 function! KgdbConnect()
-    let l:lines = systemlist("../debug.sh")
+    let l:lines = systemlist('../debug.sh')
 
     if(len(l:lines) == 1)
         echoerr l:lines[0]
         return
     endif
 
-    let l:debugger = vebugger#gdb#start("vmlinux", {'con' : lines[0]})
+    let l:debugger = vebugger#gdb#start('vmlinux', {'con' : l:lines[0]})
     call vebugger#toggleTerminalBuffer()
-    echom "Connected to " . lines[0]
+    echom 'Connected to ' . l:lines[0]
 
-    for line in l:lines[1:]
-        call vebugger#writeLine(line)
+    for l:line in l:lines[1:]
+        call vebugger#writeLine(l:line)
     endfor
 endfunction
 

@@ -94,7 +94,7 @@ autocmd User Startified AirlineRefresh
 autocmd BufEnter * call UpdateStartify()
 
 " WM Graphviz
-let g:WMGraphviz_output = "png"
+let g:WMGraphviz_output = 'png'
 
 " YouCompleteMe
 let g:ycm_complete_in_comments = 1
