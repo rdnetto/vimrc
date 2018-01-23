@@ -70,6 +70,7 @@ if g:profile  ==? "full"
     Plug 'cespare/vim-toml'
     Plug 'rust-lang/rust.vim'
     Plug 'junegunn/vader.vim'
+    Plug 'LnL7/vim-nix'
 
     " Haskell
     Plug 'eagletmt/neco-ghc'

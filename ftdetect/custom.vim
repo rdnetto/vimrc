@@ -6,3 +6,6 @@ autocmd BufNewFile,BufRead *.hsc set filetype=haskell
 
 " Soy
 autocmd BufNewFile,BufRead *.soy set filetype=soy
+
+" Nix
+autocmd BufNewFile,BufRead *.nix set filetype=nix
