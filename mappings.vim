@@ -87,6 +87,11 @@ map <silent> <unique> <Leader>cd :call ToggleWD()<CR>
 " Mapping to set filetype using fzf.vim
 nmap <Leader><Leader>ft :Filetypes<CR>
 
+" Adjust GUI font size
+nnoremap <silent> <C-=> :call IncreaseFontSize(2)<CR>
+nnoremap <silent> <C--> :call IncreaseFontSize(-2)<CR>
+nnoremap <silent> <C-0> :call ResetFontSize()<CR>
+
 " ----------------------------------------------------------------------------------------------------
 " Autocmds
 " ----------------------------------------------------------------------------------------------------

@@ -79,4 +79,28 @@ function! SmartFiles()
     endif
 endfunction
 
+function! IncreaseFontSize(amount)
+    " See :help guifont for syntax
+    " Because there can be multiple modifiers, we need to look after the fontsize as well
+    let l:matches = matchlist(g:GuiFont, '\v^(.*:h)([0-9]+)(.*)$')
+    let l:head = l:matches[1]
+    let l:size = l:matches[2]
+    let l:tail = l:matches[3]
+
+    let l:size = str2nr(l:size) + a:amount
+    exec 'GuiFont ' . l:head . l:size . l:tail
+endfunction
+
+function! ResetFontSize()
+    " Set font to whatever Konsole uses
+    " We can't do this heuristically because Shuriken and Yuki have the same DPI
+    if has('nvim')
+        let s:cmd = 'GuiFont Droid Sans Mono for Powerline:h'
+    else
+        let s:cmd = 'set guifont=Droid\ Sans\ Mono\ for\ Powerline\ '
+    endif
+
+    let s:fontsize = system("awk -F, '/^Font=/{print $2}' ~/.local/share/konsole/*.profile | head -n1")
+    execute s:cmd . s:fontsize
+endfunction
 
