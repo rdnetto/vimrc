@@ -48,6 +48,7 @@ let g:pymode_lint_mccabe_complexity = 25
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_lint_checkers = ['pep8']
+let g:pymode_rope = 0
 
 " Tagbar
 let g:tagbar_sort = 0
