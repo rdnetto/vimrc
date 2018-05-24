@@ -43,6 +43,7 @@ Plug 'vim-scripts/restore_view.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-rooter'
+Plug 'nelstrom/vim-markdown-folding'
 
 if g:profile  ==? 'full'
     " languages to load clang-based plugins for (YCM, color_coded)
