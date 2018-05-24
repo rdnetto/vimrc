@@ -11,6 +11,9 @@ let g:EasyMotion_leader_key = '<Leader>'
 " Haskell-vim - disable indentation, since vim-haskell-indent for that instead
 let g:haskell_indent_disable = 1
 
+" Intero - don't autostart, as compilation is expensive on Yuki
+let g:intero_start_immediately = 0
+
 " Latex-Box
 let g:LatexBox_Folding = 1
 let g:no_atp_maps = 1
