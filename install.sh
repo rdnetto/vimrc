@@ -9,7 +9,7 @@ fi
 
 echo "$1" > ~/.vim/profile
 
-mkdir -p ~/.config ~/.local/share/nvim/swap ~/.local/share/backup
+mkdir -p ~/.config ~/.local/share/nvim/swap ~/.local/share/nvim/backup
 cd ~/.config
 ln -s ../.vim nvim
 cd - >/dev/null
