@@ -44,6 +44,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-rooter'
 Plug 'nelstrom/vim-markdown-folding'
+Plug 'jremmen/vim-ripgrep'
 
 if g:profile  ==? 'full'
     " languages to load clang-based plugins for (YCM, color_coded)
