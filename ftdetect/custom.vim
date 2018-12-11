@@ -9,3 +9,7 @@ autocmd BufNewFile,BufRead *.soy set filetype=soy
 
 " Nix
 autocmd BufNewFile,BufRead *.nix set filetype=nix
+
+" Maven
+autocmd BufNewFile,BufRead *.pom set filetype=xml
+autocmd BufNewFile,BufRead *.pom set foldmethod=indent
