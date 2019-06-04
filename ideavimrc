@@ -1,8 +1,19 @@
 set surround
 
-" Action names taken from https://github.com/JetBrains/intellij-community platform/platform-resources-en/src/messages/ActionsBundle.properties 
+" Action names taken from https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources-en/src/messages/ActionsBundle.properties 
 map ]q :action GotoNextError<CR>
 map [q :action GotoPreviousError<CR>
+
+" vim-gitgutter emulation
+nnoremap [c :action VcsShowPrevChangeMarker<cr>
+nnoremap ]c :action VcsShowNextChangeMarker<cr>
+
+" Buffer switching (vim-unimpaired)
+nnoremap ]b :action NextTab<CR>
+nnoremap [b :action PreviousTab<CR>
+
+" Show Javadoc
+nmap <C-Q> :action QuickJavaDoc<CR>
 
 " This enables relative line numbers with 0 as the absolute
 " Note that the autocmd approach I used in Vim doesn't work in IdeaVim
