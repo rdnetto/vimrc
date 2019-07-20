@@ -69,13 +69,12 @@ set wildignore+=*.png,*.jpg,*.gif
 set wildignorecase
 
 " Persistent undo
-silent !mkdir ~/.vim/undo > /dev/null 2>&1
-set undodir=~/.vim/undo
+set undodir=~/.local/share/nvim/undo//
 set undofile
 
 " Don't store swap files in working dir - interacts poorly with NFS
-set backupdir=~/.local/share/nvim/backup
-set directory=~/.local/share/nvim/swap
+set backupdir=~/.local/share/nvim/backup//
+set directory=~/.local/share/nvim/swap//
 
 " Set colorscheme
 if has('nvim')

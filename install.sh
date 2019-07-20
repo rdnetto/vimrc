@@ -9,10 +9,8 @@ fi
 
 echo "$1" > ~/.vim/profile
 
-mkdir -p ~/.config ~/.local/share/nvim/swap ~/.local/share/nvim/backup
-cd ~/.config
-ln -s ../.vim nvim
-cd - >/dev/null
+mkdir -p ~/.config ~/.local/share/nvim/swap ~/.local/share/nvim/backup ~/.local/share/nvim/undo
+(cd ~/.config && ln -s ../.vim nvim)
 
 # This won't exist if we didn't do a --recursive clone
 if [ ! -d "$HOME/.vim/.vim-plug/.git" ]; then
@@ -23,7 +21,7 @@ fi
 # Download & compile YCM
 if [[ "$1" == "full" && ! -d "$HOME/.vim/bundle/YouCompleteMe" ]]; then
     git clone --recursive https://github.com/Valloric/YouCompleteMe.git "$HOME/.vim/bundle/YouCompleteMe"
-    $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang
+    "$HOME/.vim/bundle/YouCompleteMe/install.sh" --clang-completer --system-libclang
 
     echo "Please install app-vim/automatictexplugin for full LaTeX support."
 fi
