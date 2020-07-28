@@ -82,7 +82,7 @@ nmap <Leader>gp <Plug>GitGutterPreviewHunk
 " Vim-Rooter
 let g:rooter_default_patterns = ['Makefile', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']
 let g:rooter_patterns = g:rooter_default_patterns
-let g:rooter_use_lcd = 1
+let g:rooter_cd_cmd="lcd"
 let g:rooter_disable_map = 1
 
 " Vim-Startify
