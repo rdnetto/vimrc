@@ -3,8 +3,8 @@ let g:haskellmode_completion_ghc = 0
 setlocal omnifunc=necoghc#omnifunc
 
 " Code style
-set tabspace=2
-set shiftwifth=2
+set tabstop=2
+set shiftwidth=2
 
 nnoremap <buffer> <silent> <F8> :wa<CR>:call InteroBuild()<CR>
 nnoremap <buffer> <silent> <S-F8> :wa<CR>:NeomakeProject stackbuild<CR>
