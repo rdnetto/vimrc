@@ -19,3 +19,6 @@ nmap <C-Q> :action QuickJavaDoc<CR>
 " Note that the autocmd approach I used in Vim doesn't work in IdeaVim
 :set number
 :set relativenumber
+
+" Enables smart join functionality
+:set ideajoin
