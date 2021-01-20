@@ -100,7 +100,7 @@ function! ResetFontSize()
         let s:cmd = 'set guifont=Droid\ Sans\ Mono '
     endif
 
-    let s:fontsize = system("awk -F, '/^Font=/{print $2}' ~/.local/share/konsole/*.profile | head -n1")
+    let s:fontsize = system("awk '($1 == \"font_size\") {print $2 }' ~/.config/kitty/kitty.conf")
     execute s:cmd . s:fontsize
 endfunction
 
