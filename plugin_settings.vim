@@ -53,6 +53,9 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_lint_checkers = ['pep8']
 let g:pymode_rope = 0
 
+" Disable built-in Python2 integration
+let g:loaded_python_provider = 0
+
 " Tagbar
 let g:tagbar_sort = 0
 let g:tagbar_show_linenumbers = -1
