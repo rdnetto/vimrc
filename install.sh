@@ -26,3 +26,6 @@ if [[ "$1" == "full" && ! -d "$HOME/.vim/bundle/YouCompleteMe" ]]; then
     echo "Please install app-vim/automatictexplugin for full LaTeX support."
 fi
 
+# Actually install the plugins
+nvim +:PlugInstall +:qa
+
