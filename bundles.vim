@@ -72,6 +72,10 @@ if g:profile  ==? 'full'
     Plug 'rust-lang/rust.vim'
     Plug 'junegunn/vader.vim'
     Plug 'LnL7/vim-nix'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'udalov/kotlin-vim'
+    Plug 'jvirtanen/vim-hcl'
+    Plug 'hashivim/vim-terraform'
 
     " Haskell
     Plug 'eagletmt/neco-ghc'
