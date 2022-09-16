@@ -37,6 +37,7 @@ Plug 'tpope/vim-commentary'
 Plug 'kana/vim-niceblock'
 Plug 'junegunn/vim-easy-align'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'vim-scripts/ReplaceWithRegister'
 
 " Misc
 Plug 'vim-scripts/restore_view.vim'
