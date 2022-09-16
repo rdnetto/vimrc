@@ -13,3 +13,10 @@ autocmd BufNewFile,BufRead *.nix set filetype=nix
 " Maven
 autocmd BufNewFile,BufRead *.pom set filetype=xml
 autocmd BufNewFile,BufRead *.pom set foldmethod=indent
+
+" Kotlin
+autocmd BufNewFile,BufRead *.kt set filetype=kotlin
+autocmd BufNewFile,BufRead *.kts set filetype=kotlin
+
+" JSON5
+autocmd BufNewFile,BufRead *.json5 set filetype=json
