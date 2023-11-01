@@ -95,5 +95,7 @@ if g:profile  ==? 'full'
                     \ 'do'  :  './install.py --clang-completer --system-libclang',
                     \ 'for' : g:clang_languages,
                     \ }
+
+    Plug 'github/copilot.vim'
 endif
 
