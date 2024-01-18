@@ -100,7 +100,14 @@ function! ResetFontSize()
         let s:cmd = 'set guifont=Droid\ Sans\ Mono '
     endif
 
-    let s:fontsize = system("awk '($1 == \"font_size\") {print $2 }' ~/.config/kitty/kitty.conf")
+    if has('mac')
+        # Need to override font size on OSX
+        let s:cmd = 'GuiFont Droid Sans Mono for Powerline:h'
+        let s:fontsize = 16
+    else
+        let s:fontsize = system("awk '($1 == \"font_size\") {print $2 }' ~/.config/kitty/kitty.conf")
+    endif
+
     execute s:cmd . s:fontsize
 endfunction
 
