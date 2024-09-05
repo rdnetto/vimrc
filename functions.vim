@@ -101,7 +101,7 @@ function! ResetFontSize()
     endif
 
     if has('mac')
-        # Need to override font size on OSX
+        " Need to override font size on OSX
         let s:cmd = 'GuiFont Droid Sans Mono for Powerline:h'
         let s:fontsize = 16
     else

@@ -90,6 +90,8 @@ if g:profile  ==? 'full'
     Plug 'editorconfig/editorconfig-vim'
 
     " Use lazy-loading for YCM as it takes ~800ms otherwise
+    " TODO: Replace with ALE - provides syntax checking, LSP integration, native Neovim use of async
+    " Also consider treesitter, telescope
     Plug 'rdnetto/YCM-Generator', {'branch' : 'develop'}
     Plug 'Valloric/YouCompleteMe', {
                     \ 'do'  :  './install.py --clang-completer --system-libclang',
