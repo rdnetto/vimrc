@@ -51,6 +51,11 @@ if g:profile  ==? 'full'
     " languages to load clang-based plugins for (YCM, color_coded)
     let g:clang_languages = ['c', 'cpp', 'cs', 'python', 'haskell']
 
+    " Basics
+    Plug 'github/copilot.vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'editorconfig/editorconfig-vim'
+
     " Tag support (requires exuberant-ctags)
     Plug 'majutsushi/tagbar'
     Plug 'ludovicchabant/vim-gutentags'
@@ -66,11 +71,9 @@ if g:profile  ==? 'full'
     Plug 'klen/python-mode'
     Plug 'wannesm/wmgraphviz.vim'
     Plug 'LaTeX-Box-Team/LaTeX-Box'
-    Plug 'trapd00r/irc.vim'
     Plug 'lepture/vim-velocity'
     Plug 'duganchen/vim-soy'
     Plug 'cespare/vim-toml'
-    Plug 'rust-lang/rust.vim'
     Plug 'junegunn/vader.vim'
     Plug 'LnL7/vim-nix'
     Plug 'leafgarland/typescript-vim'
@@ -86,18 +89,7 @@ if g:profile  ==? 'full'
     Plug 'neovimhaskell/haskell-vim'
     Plug 'parsonsmatt/intero-neovim'
 
-    " Misc
-    Plug 'editorconfig/editorconfig-vim'
-
-    " Use lazy-loading for YCM as it takes ~800ms otherwise
-    " TODO: Replace with ALE - provides syntax checking, LSP integration, native Neovim use of async
-    " Also consider treesitter, telescope
-    Plug 'rdnetto/YCM-Generator', {'branch' : 'develop'}
-    Plug 'Valloric/YouCompleteMe', {
-                    \ 'do'  :  './install.py --clang-completer --system-libclang',
-                    \ 'for' : g:clang_languages,
-                    \ }
-
-    Plug 'github/copilot.vim'
+    " Rust
+    Plug 'rust-lang/rust.vim'
 endif
 

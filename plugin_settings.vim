@@ -5,6 +5,12 @@ let g:airline_theme = 'powerlineish'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" Coc
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-rust-analyzer'
+            \ ]
+
 " EasyMotion - don't require a double tap of leader key
 let g:EasyMotion_leader_key = '<Leader>'
 
@@ -102,11 +108,4 @@ autocmd BufEnter * call UpdateStartify()
 
 " WM Graphviz
 let g:WMGraphviz_output = 'png'
-
-" YouCompleteMe
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
