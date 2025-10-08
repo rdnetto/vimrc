@@ -92,6 +92,9 @@ nnoremap <silent> <C-=> :call IncreaseFontSize(2)<CR>
 nnoremap <silent> <C--> :call IncreaseFontSize(-2)<CR>
 nnoremap <silent> <C-0> :call ResetFontSize()<CR>
 
+" Use <Tab> to trigger completion and navigate through completion items
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+
 " ----------------------------------------------------------------------------------------------------
 " Autocmds
 " ----------------------------------------------------------------------------------------------------
