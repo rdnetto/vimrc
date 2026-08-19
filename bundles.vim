@@ -52,7 +52,6 @@ if g:profile  ==? 'full'
     let g:clang_languages = ['c', 'cpp', 'cs', 'python', 'haskell']
 
     " Basics
-    Plug 'github/copilot.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'editorconfig/editorconfig-vim'
 
@@ -78,7 +77,6 @@ if g:profile  ==? 'full'
     Plug 'LnL7/vim-nix'
     Plug 'leafgarland/typescript-vim'
     Plug 'udalov/kotlin-vim'
-    Plug 'jvirtanen/vim-hcl'
     Plug 'hashivim/vim-terraform'
 
     " Haskell
