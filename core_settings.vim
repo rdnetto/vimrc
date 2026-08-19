@@ -52,6 +52,7 @@ set shiftwidth=4	    	"Use tabstop value for indenting
 " 15 folding
 set foldmethod=syntax		"Use syntax-dependent folding
 set nofoldenable        	"Don't fold by default
+let g:markdown_folding=1    "Enable Neovim markdown folding
 
 " 17 key mapping
 set ttimeoutlen=0

@@ -44,7 +44,6 @@ Plug 'vim-scripts/restore_view.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-rooter'
-Plug 'nelstrom/vim-markdown-folding'
 Plug 'jremmen/vim-ripgrep'
 
 if g:profile  ==? 'full'
