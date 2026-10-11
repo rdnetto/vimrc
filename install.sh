@@ -1,5 +1,8 @@
 #!/bin/bash
-set -e
+set -euxo pipefail
+
+# Change to directory containing the script
+cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd
 
 if [[ -z "$1" || "$1" != "light" && "$1" != "full" ]]; then
     echo "USAGE: ./install.sh [light|full]"
@@ -7,13 +10,14 @@ if [[ -z "$1" || "$1" != "light" && "$1" != "full" ]]; then
     exit 1
 fi
 
-echo "$1" > ~/.vim/profile
+echo "$1" > ~/profile
 
-mkdir -p ~/.config ~/.local/share/nvim/swap ~/.local/share/nvim/backup ~/.local/share/nvim/undo
-(cd ~/.config && ln -s ../.vim nvim)
+mkdir -p ~/.local/share/nvim/swap \
+    ~/.local/share/nvim/backup \
+    ~/.local/share/nvim/undo
 
 # This won't exist if we didn't do a --recursive clone
-if [ ! -d "$HOME/.vim/.vim-plug/.git" ]; then
+if [ ! -d "./.vim-plug/.git" ]; then
     git submodule init
     git submodule update
 fi
