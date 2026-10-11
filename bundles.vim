@@ -47,9 +47,6 @@ Plug 'airblade/vim-rooter'
 Plug 'jremmen/vim-ripgrep'
 
 if g:profile  ==? 'full'
-    " languages to load clang-based plugins for (YCM, color_coded)
-    let g:clang_languages = ['c', 'cpp', 'cs', 'python', 'haskell']
-
     " Basics
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'editorconfig/editorconfig-vim'

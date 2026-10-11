@@ -18,14 +18,5 @@ if [ ! -d "$HOME/.vim/.vim-plug/.git" ]; then
     git submodule update
 fi
 
-# Download & compile YCM
-if [[ "$1" == "full" && ! -d "$HOME/.vim/bundle/YouCompleteMe" ]]; then
-    git clone --recursive https://github.com/Valloric/YouCompleteMe.git "$HOME/.vim/bundle/YouCompleteMe"
-    "$HOME/.vim/bundle/YouCompleteMe/install.sh" --clang-completer --system-libclang
-
-    echo "Please install app-vim/automatictexplugin for full LaTeX support."
-fi
-
 # Actually install the plugins
 nvim +:PlugInstall +:qa
-
