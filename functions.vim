@@ -92,20 +92,18 @@ function! IncreaseFontSize(amount)
 endfunction
 
 function! ResetFontSize()
-    " Set font to whatever Konsole uses
-    " We can't do this heuristically because Shuriken and Yuki have the same DPI
+    let s:font = trim(system("awk '($1 == \"font_family\") { $1=\"\"; print $0; }' ~/.config/kitty/kitty.conf"))
+    let s:fontsize = trim(system("awk '($1 == \"font_size\") {print $2 }' ~/.config/kitty/kitty.conf"))
+
     if has('nvim')
-        let s:cmd = 'GuiFont Droid Sans Mono:h'
+        let s:cmd = 'GuiFont ' . font . ':h'
     else
-        let s:cmd = 'set guifont=Droid\ Sans\ Mono '
+        let s:cmd = 'set guifont=' . substitute(s:font, ' ', '\ ') . ' '
     endif
 
     if has('mac')
         " Need to override font size on OSX
-        let s:cmd = 'GuiFont Droid Sans Mono for Powerline:h'
         let s:fontsize = 16
-    else
-        let s:fontsize = system("awk '($1 == \"font_size\") {print $2 }' ~/.config/kitty/kitty.conf")
     endif
 
     execute s:cmd . s:fontsize
